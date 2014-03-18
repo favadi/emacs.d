@@ -1,9 +1,6 @@
 ;; Enable Emacs auto indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; invoke M-x without the Alt key
-(global-set-key "\C-c\C-m" 'execute-extended-command)
-
 ;; use ibuffer instead of buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 

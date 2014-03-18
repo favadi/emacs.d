@@ -52,4 +52,8 @@
 (require 'ethan-wspace)
 (global-ethan-wspace-mode 1)
 
+;; jump to current directory
+(require 'dired-x)
+(global-set-key (kbd "C-x Cj") 'dired-jump)
+
 (provide 'conf-common)
