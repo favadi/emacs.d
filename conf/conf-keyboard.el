@@ -17,4 +17,14 @@
 ;; rebinding help-command
 (global-set-key (kbd "C-z") 'help-command)
 
+(defun smart-open-line ()
+  "Insert an empty line after the current line.
+Position the cursor at its beginning, according to the current mode."
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
+(global-set-key (kbd "C-j") 'smart-open-line)
+
+
 (provide 'conf-keyboard)
