@@ -26,5 +26,8 @@ Position the cursor at its beginning, according to the current mode."
 
 (global-set-key (kbd "C-j") 'smart-open-line)
 
+;; enable case control
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 (provide 'conf-keyboard)

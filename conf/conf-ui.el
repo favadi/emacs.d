@@ -26,4 +26,13 @@
 (tooltip-mode -1)
 (setq tooltip-use-echo-area t)
 
+;; highlight current line
+(global-hl-line-mode +1)
+
+;; show buffer file name in title bar
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
 (provide 'conf-ui)

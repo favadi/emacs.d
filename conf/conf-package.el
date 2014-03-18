@@ -4,7 +4,7 @@
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;; Latest Org mode
-(add-to-list 'package-archives 
+(add-to-list 'package-archives
   '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
@@ -16,7 +16,9 @@
     org
     markdown-mode
     gitignore-mode
-    gnuplot-mode)
+    gnuplot-mode
+    ethan-wspace
+    )
   "List of packages needs to be installed at launch")
 
 (defun has-package-not-installed ()
