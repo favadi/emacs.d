@@ -56,4 +56,9 @@
 (require 'dired-x)
 (global-set-key (kbd "C-x Cj") 'dired-jump)
 
+;; smartparens
+(require 'smartparens-config)
+(smartparens-global-mode t)
+(show-smartparens-global-mode +1)       ;show matching delimiters
+
 (provide 'conf-common)

@@ -18,6 +18,7 @@
     gitignore-mode
     gnuplot-mode
     ethan-wspace
+    smartparens
     )
   "List of packages needs to be installed at launch")
 
