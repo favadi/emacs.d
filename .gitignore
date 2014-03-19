@@ -3,3 +3,5 @@ elpa
 bookmarks
 tramp
 session.*
+.python-environments
+ac-comphist.dat

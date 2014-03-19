@@ -23,6 +23,9 @@
     flycheck
     ido-vertical-mode
     smex
+    auto-complete
+    jedi
+    yaml-mode
     )
   "List of packages needs to be installed at launch")
 

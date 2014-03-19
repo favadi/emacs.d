@@ -83,4 +83,15 @@
 (require 'flycheck)
 (add-hook 'python-mode-hook 'flycheck-mode)
 
+;; auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; Standard Jedi.el setting
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+;; use yaml-mode for salt state files
+(add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
+
 (provide 'conf-common)
