@@ -61,4 +61,16 @@
 (smartparens-global-mode t)
 (show-smartparens-global-mode +1)       ;show matching delimiters
 
+;; https://github.com/emacsmirror/whole-line-or-region
+(require 'whole-line-or-region)
+
+(defun whole-line-or-region-comment-dwim-2 (prefix)
+  "Call `comment-dwim' on region or PREFIX whole lines."
+  (interactive "*p")
+  (whole-line-or-region-call-with-prefix 'comment-dwim prefix nil t))
+
+(add-to-list 'whole-line-or-region-extensions-alist
+             '(comment-dwim whole-line-or-region-comment-dwim-2 nil))
+(whole-line-or-region-mode)
+
 (provide 'conf-common)

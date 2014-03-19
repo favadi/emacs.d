@@ -19,6 +19,7 @@
     gnuplot-mode
     ethan-wspace
     smartparens
+    whole-line-or-region
     )
   "List of packages needs to be installed at launch")
 
