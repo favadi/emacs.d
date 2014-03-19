@@ -21,6 +21,7 @@
     smartparens
     whole-line-or-region
     flycheck
+    ido-vertical-mode
     )
   "List of packages needs to be installed at launch")
 
