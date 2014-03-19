@@ -73,4 +73,8 @@
              '(comment-dwim whole-line-or-region-comment-dwim-2 nil))
 (whole-line-or-region-mode)
 
+;; flycheck
+(require 'flycheck)
+(add-hook 'python-mode-hook 'flycheck-mode)
+
 (provide 'conf-common)

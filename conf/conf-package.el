@@ -20,6 +20,7 @@
     ethan-wspace
     smartparens
     whole-line-or-region
+    flycheck
     )
   "List of packages needs to be installed at launch")
 
