@@ -12,6 +12,10 @@
       (bookmark-jump
        (ido-completing-read "Jump to bookmark: " (bookmark-all-names)))))
 
+;; ido style for M-x
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+
 ;; ibus.el
 (add-to-list 'load-path "~/.emacs.d/ibus")
 (require 'ibus)
