@@ -4,6 +4,14 @@
 (tool-bar-mode -1)
 
 ;; load solarized theme
+(setq solarized-use-variable-pitch nil)  ; disable variable size font
+;; do not use different font size for org mode
+(setq solarized-height-minus-1 1.0)
+(setq solarized-height-plus-1 1.0)
+(setq solarized-height-plus-2 1.0)
+(setq solarized-height-plus-3 1.0)
+(setq solarized-height-plus-4 1.0)
+;; load the theme
 (load-theme 'solarized-light t)
 
 ;; disable startup message
