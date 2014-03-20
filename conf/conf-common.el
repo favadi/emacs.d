@@ -82,6 +82,7 @@
 ;; flycheck
 (require 'flycheck)
 (add-hook 'python-mode-hook 'flycheck-mode)
+(add-hook 'sh-mode-hook 'flycheck-mode)
 
 ;; auto-complete
 (require 'auto-complete-config)
