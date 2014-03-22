@@ -26,6 +26,7 @@
     auto-complete
     jedi
     yaml-mode
+    virtualenvwrapper
     )
   "List of packages needs to be installed at launch")
 
