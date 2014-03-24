@@ -27,6 +27,7 @@
     jedi
     yaml-mode
     virtualenvwrapper
+    slime
     )
   "List of packages needs to be installed at launch")
 

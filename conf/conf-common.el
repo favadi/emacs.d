@@ -84,4 +84,9 @@
 ;; use yaml-mode for salt state files
 (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
 
+;; slime
+(require 'slime-autoloads)
+(setq inferior-lisp-program "clisp")
+(setq slime-contribs '(slime-fancy))
+
 (provide 'conf-common)
