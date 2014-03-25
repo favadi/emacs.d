@@ -76,6 +76,11 @@
 ;; auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
+(global-set-key "\M-/" 'auto-complete)
+;; use C-n, C-p to select
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
 
 ;; Standard Jedi.el setting
 (add-hook 'python-mode-hook 'jedi:setup)
