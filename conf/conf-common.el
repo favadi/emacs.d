@@ -70,6 +70,8 @@
 
 ;; flycheck
 (require 'flycheck)
+;; only check if the mode is enabled or the buffer was saved
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
 
