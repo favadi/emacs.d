@@ -4,7 +4,11 @@
 (tool-bar-mode -1)
 
 ;; load solarized theme
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
+
+;; Set default font
+(add-to-list 'default-frame-alist
+             '(font . "Consolas-13"))
 
 ;; disable startup message
 (setq inhibit-startup-message t)
