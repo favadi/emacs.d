@@ -28,6 +28,7 @@
     yaml-mode
     virtualenvwrapper
     slime
+    lua-mode
     )
   "List of packages needs to be installed at launch")
 

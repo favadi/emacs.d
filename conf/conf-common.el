@@ -73,6 +73,7 @@
 ;; only check if the mode is enabled or the buffer was saved
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
 (add-hook 'python-mode-hook 'flycheck-mode)
+(add-hook 'lua-mode-hook 'flycheck-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
 
 ;; auto-complete
@@ -95,5 +96,8 @@
 (require 'slime-autoloads)
 (setq inferior-lisp-program "clisp")
 (setq slime-contribs '(slime-fancy))
+
+;; lua
+(setq lua-indent-level 2)
 
 (provide 'conf-common)
