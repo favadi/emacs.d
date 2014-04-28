@@ -100,4 +100,7 @@
 ;; lua
 (setq lua-indent-level 2)
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (provide 'conf-common)

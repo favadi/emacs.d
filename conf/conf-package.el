@@ -29,6 +29,7 @@
     virtualenvwrapper
     slime
     lua-mode
+    magit
     )
   "List of packages needs to be installed at launch")
 
