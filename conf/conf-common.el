@@ -103,4 +103,7 @@
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; jinja2
+(add-to-list 'auto-mode-alist '("\\.jinja\\'" . jinja2-mode))
+
 (provide 'conf-common)

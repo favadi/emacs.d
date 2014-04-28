@@ -30,6 +30,7 @@
     slime
     lua-mode
     magit
+    jinja2-mode
     )
   "List of packages needs to be installed at launch")
 
