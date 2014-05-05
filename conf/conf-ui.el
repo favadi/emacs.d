@@ -39,4 +39,7 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+;; change tab width
+(setq-default tab-width 4)
+
 (provide 'conf-ui)
