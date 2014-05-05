@@ -56,7 +56,6 @@
 
 ;; jump to current directory
 (require 'dired-x)
-(global-set-key (kbd "C-x Cj") 'dired-jump)
 
 ;; smartparens
 (require 'smartparens-config)
