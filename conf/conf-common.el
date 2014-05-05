@@ -47,6 +47,13 @@
 (require 'ethan-wspace)
 (global-ethan-wspace-mode 1)
 
+(defun disable-ethan-wspace()
+  "Disable ethan-wspace-mode"
+  (ethan-wspace-mode 0))
+
+;; disable ethan-wspace for Makefile
+(add-hook 'makefile-mode-hook 'disable-ethan-wspace)
+
 ;; jump to current directory
 (require 'dired-x)
 (global-set-key (kbd "C-x Cj") 'dired-jump)
