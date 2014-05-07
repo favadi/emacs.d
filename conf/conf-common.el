@@ -1,3 +1,6 @@
+;; show column
+(setq column-number-mode t)
+
 ;; enable ido everywhere
 (require 'ido-vertical-mode)
 (ido-mode 1)
