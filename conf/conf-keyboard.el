@@ -5,7 +5,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; use C-h as backspace
-(global-set-key (kbd "C-h") 'delete-backward-char)
+(setf (global-key-binding (kbd "C-h")) (kbd "<backspace>"))
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 
 ;; rebinding mark-defun
