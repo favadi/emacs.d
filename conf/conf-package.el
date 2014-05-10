@@ -31,6 +31,7 @@
     lua-mode
     magit
     jinja2-mode
+    ace-jump-mode
     )
   "List of packages needs to be installed at launch")
 

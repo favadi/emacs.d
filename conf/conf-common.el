@@ -115,4 +115,8 @@
 ;; jinja2
 (add-to-list 'auto-mode-alist '("\\.jinja\\'" . jinja2-mode))
 
+;; ace-jump-mode
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(setq ace-jump-mode-scope 'global)
+
 (provide 'conf-common)
