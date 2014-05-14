@@ -84,6 +84,7 @@
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'lua-mode-hook 'flycheck-mode)
 (add-hook 'sh-mode-hook 'flycheck-mode)
+(add-hook 'rst-mode-hook 'flycheck-mode)
 
 ;; auto-complete
 (require 'auto-complete-config)
@@ -118,5 +119,13 @@
 ;; ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (setq ace-jump-mode-scope 'global)
+
+;; rst
+(defun rst-setup-keybord ()
+  "define some key binding for rst-mode"
+  (local-set-key (kbd "C-M-h") 'backward-kill-word)
+  (local-set-key (kbd "C-c h") 'rst-mark-section))
+
+(add-hook 'rst-mode-hook 'rst-setup-keybord)
 
 (provide 'conf-common)
