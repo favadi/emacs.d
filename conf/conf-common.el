@@ -131,4 +131,7 @@
 ;; the silver search - ag
 (setq ag-highlight-search t)
 
+;; projectile
+(projectile-global-mode)
+
 (provide 'conf-common)

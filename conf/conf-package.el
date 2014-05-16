@@ -33,6 +33,7 @@
     jinja2-mode
     ace-jump-mode
     ag
+    projectile
     )
   "List of packages needs to be installed at launch")
 
