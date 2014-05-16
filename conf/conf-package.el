@@ -32,6 +32,7 @@
     magit
     jinja2-mode
     ace-jump-mode
+    ag
     )
   "List of packages needs to be installed at launch")
 

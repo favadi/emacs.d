@@ -128,4 +128,7 @@
 
 (add-hook 'rst-mode-hook 'rst-setup-keybord)
 
+;; the silver search - ag
+(setq ag-highlight-search t)
+
 (provide 'conf-common)
