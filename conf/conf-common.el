@@ -133,5 +133,12 @@
 
 ;; projectile
 (projectile-global-mode)
+(setq projectile-mode-line-lighter "Prj")
+
+;; smart-mode-line
+(setq sml/theme 'respectful)
+(sml/setup)
+;; (setq sml/hidden-modes '(" AC" " WLR" " SP" " ew:mnlt"))
+;; (setq sml/name-width 30)
 
 (provide 'conf-common)

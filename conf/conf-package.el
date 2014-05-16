@@ -34,6 +34,7 @@
     ace-jump-mode
     ag
     projectile
+    smart-mode-line
     )
   "List of packages needs to be installed at launch")
 
