@@ -5,3 +5,5 @@ tramp
 session.*
 .python-environments
 ac-comphist.dat
+projectile-bookmarks.eld
+%backup%~
