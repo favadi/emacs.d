@@ -35,6 +35,7 @@
     ag
     projectile
     smart-mode-line
+    undo-tree
     )
   "List of packages needs to be installed at launch")
 
