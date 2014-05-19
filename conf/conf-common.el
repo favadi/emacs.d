@@ -121,17 +121,12 @@
 (setq ace-jump-mode-scope 'global)
 
 ;; rst
-(defun rst-setup-keyboard ()
-  "define some key binding for rst-mode"
-  (local-set-key (kbd "C-M-h") 'backward-kill-word)
-  (local-set-key (kbd "C-c h") 'rst-mark-section))
-
-(defun rst-disable-tab ()
-  "do not use tab for indent"
-  (setq indent-tabs-mode nil))
-
-(add-hook 'rst-mode-hook 'rst-setup-keyboard)
-(add-hook 'rst-mode-hook 'rst-disable-tab)
+(add-hook 'rst-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (local-set-key (kbd "C-M-h") 'backward-kill-word)
+            (local-set-key (kbd "C-c h") 'rst-mark-section)
+            (local-set-key (kbd "C-=") 'er/expand-region)))
 
 ;; the silver search - ag
 (setq ag-highlight-search t)
