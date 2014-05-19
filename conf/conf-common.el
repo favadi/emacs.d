@@ -149,4 +149,11 @@
 ;; undo-tree
 (global-undo-tree-mode)
 
+;; expand region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; change inner
+(global-set-key (kbd "C-c i") 'change-inner)
+(global-set-key (kbd "C-c o") 'change-outer)
+
 (provide 'conf-common)

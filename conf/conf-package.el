@@ -36,6 +36,8 @@
     projectile
     smart-mode-line
     undo-tree
+    expand-region
+    change-inner
     )
   "List of packages needs to be installed at launch")
 
