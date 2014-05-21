@@ -38,6 +38,7 @@
     undo-tree
     expand-region
     change-inner
+    auto-complete-rst
     )
   "List of packages needs to be installed at launch")
 

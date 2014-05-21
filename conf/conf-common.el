@@ -128,6 +128,9 @@
             (local-set-key (kbd "C-c h") 'rst-mark-section)
             (local-set-key (kbd "C-=") 'er/expand-region)))
 
+(require 'auto-complete-rst)
+(auto-complete-rst-init)
+
 ;; the silver search - ag
 (setq ag-highlight-search t)
 
