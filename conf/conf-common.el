@@ -90,6 +90,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (global-set-key "\M-/" 'auto-complete)
+(setq ac-auto-show-menu nil)
 ;; use C-n, C-p to select
 (setq ac-use-menu-map t)
 (define-key ac-menu-map "\C-n" 'ac-next)
