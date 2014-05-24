@@ -103,6 +103,12 @@
 ;; use yaml-mode for salt state files
 (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
 
+;; yaml
+(add-hook 'yaml-mode-hook
+          (lambda ()
+            (auto-complete-mode)
+            (local-set-key (kbd "C-j") 'smart-open-line)))
+
 ;; slime
 (require 'slime-autoloads)
 (setq inferior-lisp-program "clisp")
