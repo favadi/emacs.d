@@ -4,7 +4,7 @@
 (tool-bar-mode -1)
 
 ;; load solarized theme
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 
 ;; Set default font
 (add-to-list 'default-frame-alist
