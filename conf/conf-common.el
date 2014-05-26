@@ -49,6 +49,8 @@
 ;; cleanup traling white space
 (require 'ethan-wspace)
 (global-ethan-wspace-mode 1)
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)
 
 (defun disable-ethan-wspace()
   "Disable ethan-wspace-mode"
