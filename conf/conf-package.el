@@ -3,9 +3,6 @@
 ;; Milkypostman’s Emacs Lisp Package Archive
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;; Latest Org mode
-(add-to-list 'package-archives
-  '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
 ;; http://blog.zhengdong.me/2012/03/14/how-i-manage-emacs-packages
@@ -13,7 +10,6 @@
 (require 'cl)
 (defvar packages-list
   '(solarized-theme
-    org
     markdown-mode
     gitignore-mode
     gnuplot-mode
