@@ -163,4 +163,10 @@
 (global-set-key (kbd "C-c i") 'change-inner)
 (global-set-key (kbd "C-c o") 'change-outer)
 
+;; abbrev
+(setq abbrev-file-name             ;; tell emacs where to read abbrev
+      "~/.emacs.d/abbrev_defs")    ;; definitions from...
+
+(setq save-abbrevs t)              ;; save abbrevs when files are saved
+
 (provide 'conf-common)
