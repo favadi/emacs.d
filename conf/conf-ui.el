@@ -6,10 +6,6 @@
 ;; load solarized theme
 (load-theme 'solarized-light t)
 
-;; Set default font
-(add-to-list 'default-frame-alist
-             '(font . "Consolas-13"))
-
 ;; disable startup message
 (setq inhibit-startup-message t)
 
