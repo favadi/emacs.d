@@ -124,6 +124,9 @@
 
 ;; jinja2
 (add-to-list 'auto-mode-alist '("\\.jinja\\'" . jinja2-mode))
+(add-hook 'jinja2-mode-hook
+          (lambda ()
+            (auto-complete-mode)))
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
