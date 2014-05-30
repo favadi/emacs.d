@@ -2,7 +2,7 @@
 (define-abbrev-table 'yaml-mode-abbrev-table
   '(
     ("lic" "{#-
-Copyright (c) 2013, Diep Pham
+Copyright (c) 2014, Diep Pham
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -35,7 +35,7 @@ Maintainer: Diep Pham <imeo@favadi.com>
 (define-abbrev-table 'jinja2-mode-abbrev-table
   '(
     ("lic" "{#-
-Copyright (c) 2013, Diep Pham
+Copyright (c) 2014, Diep Pham
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -67,7 +67,7 @@ Maintainer: Diep Pham <imeo@favadi.com>
 
 (define-abbrev-table 'rst-mode-abbrev-table
   '(
-    ("lic" ":Copyrights: Copyright (c) 2013, Diep Pham
+    ("lic" ":Copyrights: Copyright (c) 2014, Diep Pham
 
              All rights reserved.
 
