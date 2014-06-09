@@ -147,16 +147,10 @@
 ;; the silver search - ag
 (setq ag-highlight-search t)
 
-;; ack
-;; Create shorter aliases
-(defalias 'ack 'ack-and-a-half)
-(defalias 'ack-same 'ack-and-a-half-same)
-(defalias 'ack-find-file 'ack-and-a-half-find-file)
-(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
-
 ;; projectile
 (projectile-global-mode)
 (setq projectile-mode-line-lighter "Prj")
+(define-key projectile-mode-map (kbd "C-c p a") 'projectile-ag)
 
 ;; smart-mode-line
 (setq sml/theme 'respectful)

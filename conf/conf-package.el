@@ -29,7 +29,6 @@
     jinja2-mode
     ace-jump-mode
     ag
-    ack-and-a-half
     projectile
     smart-mode-line
     undo-tree
