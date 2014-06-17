@@ -153,8 +153,9 @@
 (define-key projectile-mode-map (kbd "C-c p a") 'projectile-ag)
 
 ;; smart-mode-line
-(setq sml/theme 'respectful)
+(setq sml/no-confirm-load-theme t)
 (sml/setup)
+(sml/apply-theme 'respectful)
 ;; (setq sml/hidden-modes '(" AC" " WLR" " SP" " ew:mnlt"))
 ;; (setq sml/name-width 30)
 
