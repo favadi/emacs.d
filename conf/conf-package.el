@@ -13,7 +13,6 @@
     markdown-mode
     gitignore-mode
     gnuplot-mode
-    ethan-wspace
     smartparens
     whole-line-or-region
     flycheck
@@ -35,6 +34,7 @@
     expand-region
     change-inner
     auto-complete-rst
+	ws-butler
     )
   "List of packages needs to be installed at launch")
 

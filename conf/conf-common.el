@@ -46,19 +46,6 @@
 ;; delete selection on insert
 (delete-selection-mode +1)
 
-;; cleanup traling white space
-(require 'ethan-wspace)
-(global-ethan-wspace-mode 1)
-(setq require-final-newline nil)
-(setq mode-require-final-newline nil)
-
-(defun disable-ethan-wspace()
-  "Disable ethan-wspace-mode"
-  (ethan-wspace-mode 0))
-
-;; disable ethan-wspace for Makefile
-(add-hook 'makefile-mode-hook 'disable-ethan-wspace)
-
 ;; jump to current directory
 (require 'dired-x)
 
@@ -174,5 +161,8 @@
       "~/.emacs.d/abbrev_defs")    ;; definitions from...
 
 (setq save-abbrevs t)              ;; save abbrevs when files are saved
+
+;; ws-butler
+(add-hook 'prog-mode-hook 'ws-butler-mode)
 
 (provide 'conf-common)
