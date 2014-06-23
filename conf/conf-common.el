@@ -169,4 +169,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
+(setq delete-by-moving-to-trash t)
+
 (provide 'conf-common)
