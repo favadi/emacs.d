@@ -165,4 +165,8 @@
 ;; ws-butler
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 
+;; making buffer names unique
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 (provide 'conf-common)
