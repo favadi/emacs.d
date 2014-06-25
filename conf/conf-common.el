@@ -171,4 +171,7 @@
 
 (setq delete-by-moving-to-trash t)
 
+;; do not use tab
+(setq-default indent-tabs-mode nil)
+
 (provide 'conf-common)
