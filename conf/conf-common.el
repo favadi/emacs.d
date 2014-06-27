@@ -52,6 +52,7 @@
 ;; smartparens
 (require 'smartparens-config)
 (smartparens-global-mode t)
+(setq sp-autoescape-string-quote nil)   ;disable auto escape
 (show-smartparens-global-mode +1)       ;show matching delimiters
 
 ;; https://github.com/emacsmirror/whole-line-or-region
