@@ -16,7 +16,7 @@
     smartparens
     whole-line-or-region
     flycheck
-    ido-vertical-mode
+    ido-ubiquitous
     smex
     auto-complete
     jedi
