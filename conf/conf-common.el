@@ -136,7 +136,6 @@
 ;; projectile
 (projectile-global-mode)
 (setq projectile-mode-line-lighter "Prj")
-(define-key projectile-mode-map (kbd "C-c p a") 'projectile-ag)
 
 ;; smart-mode-line
 (setq sml/no-confirm-load-theme t)
