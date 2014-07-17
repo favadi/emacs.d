@@ -34,7 +34,8 @@
     expand-region
     change-inner
     auto-complete-rst
-	ws-butler
+    ws-butler
+    go-mode
     )
   "List of packages needs to be installed at launch")
 
