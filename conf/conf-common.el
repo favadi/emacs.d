@@ -162,6 +162,8 @@
 
 ;; ws-butler
 (add-hook 'prog-mode-hook 'ws-butler-mode)
+(add-hook 'jinja2-mode-hook 'ws-butler-mode)
+(add-hook 'yaml-mode-hook 'ws-butler-mode)
 
 ;; making buffer names unique
 (require 'uniquify)
