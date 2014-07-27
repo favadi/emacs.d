@@ -9,33 +9,34 @@
 ;; Guarantee all packages are installed on start
 (require 'cl)
 (defvar packages-list
-  '(solarized-theme
-    markdown-mode
-    gitignore-mode
-    gnuplot-mode
-    smartparens
-    whole-line-or-region
-    flycheck
-    ido-ubiquitous
-    smex
-    auto-complete
-    jedi
-    yaml-mode
-    virtualenvwrapper
-    slime
-    lua-mode
-    magit
-    jinja2-mode
+  '(
     ace-jump-mode
     ag
-    projectile
-    smart-mode-line
-    undo-tree
-    expand-region
-    change-inner
+    auto-complete
     auto-complete-rst
-    ws-butler
+    change-inner
+    expand-region
+    flycheck
+    gitignore-mode
+    gnuplot-mode
     go-mode
+    ido-ubiquitous
+    jedi
+    jinja2-mode
+    lua-mode
+    magit
+    markdown-mode
+    projectile
+    slime
+    smart-mode-line
+    smartparens
+    smex
+    solarized-theme
+    undo-tree
+    virtualenvwrapper
+    whole-line-or-region
+    ws-butler
+    yaml-mode
     )
   "List of packages needs to be installed at launch")
 
