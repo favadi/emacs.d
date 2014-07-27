@@ -27,4 +27,7 @@ Position the cursor at its beginning, according to the current mode."
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; switch to most recent buffer
+(global-set-key (kbd "C-c b") 'mode-line-other-buffer)
+
 (provide 'conf-keyboard)
