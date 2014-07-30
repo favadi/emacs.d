@@ -35,6 +35,7 @@
     solarized-theme
     undo-tree
     virtualenvwrapper
+    web-mode
     whole-line-or-region
     ws-butler
     yaml-mode

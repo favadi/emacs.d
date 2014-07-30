@@ -159,4 +159,7 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 
+;; web-mode
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 (provide 'conf-common)
