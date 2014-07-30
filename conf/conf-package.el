@@ -20,7 +20,8 @@
     gitignore-mode
     gnuplot-mode
     go-mode
-    ido-ubiquitous
+    helm
+    helm-projectile
     jedi
     jinja2-mode
     lua-mode

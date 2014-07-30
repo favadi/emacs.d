@@ -1,39 +1,12 @@
 ;; show column
 (setq column-number-mode t)
 
-;; enable ido everywhere
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-
-;; use ido for bookmark
-(global-set-key (kbd "C-x r b")
-    (lambda ()
-      (interactive)
-      (bookmark-jump
-       (ido-completing-read "Jump to bookmark: " (bookmark-all-names)))))
-
-;; ido style for M-x
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-
 ;; enable recent files mode
 (require 'recentf)
 (recentf-mode t)
 
-;; get rid of `find-file-read-only' and replace it with something
-;; more useful.
-(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
-
 ;; 50 files ought to be enough.
 (setq recentf-max-saved-items 50)
-
-(defun ido-recentf-open ()
-  "Use `ido-completing-read' to \\[find-file] a recent file"
-  (interactive)
-  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
-      (message "Opening file...")
-    (message "Aborting")))
 
 ;; store all backup and autosave files in the tmp dir
 (setq backup-directory-alist
@@ -136,6 +109,7 @@
 ;; projectile
 (projectile-global-mode)
 (setq projectile-mode-line-lighter "Prj")
+(setq projectile-completion-system 'helm)
 
 ;; smart-mode-line
 (setq sml/no-confirm-load-theme t)
@@ -173,5 +147,16 @@
 
 ;; do not use tab
 (setq-default indent-tabs-mode nil)
+
+;; helm
+(global-set-key (kbd "M-x") 'helm-M-x)
+(setq helm-command-prefix-key "C-c l")
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 
 (provide 'conf-common)
