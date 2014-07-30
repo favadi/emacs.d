@@ -12,7 +12,7 @@
 (global-set-key (kbd "C-c h") 'mark-defun)
 
 ;; rebinding help-command
-(global-set-key (kbd "C-z") 'help-command)
+(global-set-key (kbd "C-;") 'help-command)
 
 (defun smart-open-line ()
   "Insert an empty line after the current line.
