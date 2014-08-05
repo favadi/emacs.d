@@ -149,14 +149,20 @@
 (setq-default indent-tabs-mode nil)
 
 ;; helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(setq helm-command-prefix-key "C-c l")
+(global-set-key (kbd "M-x") 'helm-M-x)  ;; use helm for M-x
+(setq helm-command-prefix-key "C-c l")  ;; better helm prefix
+
+;; turn on helm
 (require 'helm-config)
 (helm-mode 1)
+
+;; helm global key bindings
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+;; use C-h to delete with helm
 (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
 
 ;; web-mode
