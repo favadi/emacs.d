@@ -124,10 +124,6 @@
 ;; expand region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-;; change inner
-(global-set-key (kbd "C-c i") 'change-inner)
-(global-set-key (kbd "C-c o") 'change-outer)
-
 ;; abbrev
 (setq abbrev-file-name             ;; tell emacs where to read abbrev
       "~/.emacs.d/abbrev_defs")    ;; definitions from...

@@ -14,7 +14,6 @@
     ag
     auto-complete
     auto-complete-rst
-    change-inner
     expand-region
     flycheck
     gitignore-mode
