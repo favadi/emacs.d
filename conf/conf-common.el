@@ -164,4 +164,13 @@
 ;; web-mode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+;; auto active virtualenv
+(add-hook 'python-mode-hook (lambda ()
+                              (hack-local-variables)
+                              (when (boundp 'project-venv-name)
+                                (venv-workon project-venv-name))))
+
+;; always load project-venv-name from dir-locals.el
+(put 'project-venv-name 'safe-local-variable #'stringp)
+
 (provide 'conf-common)
