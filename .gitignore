@@ -1,9 +1,10 @@
-auto-save-list
-elpa
-bookmarks
-tramp
-session.*
+%backup%~
 .python-environments
 ac-comphist.dat
+auto-save-list
+bookmarks
+elpa
 projectile-bookmarks.eld
-%backup%~
+projectile.cache
+session.*
+tramp
