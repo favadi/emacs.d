@@ -27,6 +27,7 @@
     magit
     markdown-mode
     projectile
+    rich-minority
     slime
     smart-mode-line
     smartparens

@@ -115,8 +115,6 @@
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
 (sml/apply-theme 'respectful)
-;; (setq sml/hidden-modes '(" AC" " WLR" " SP" " ew:mnlt"))
-;; (setq sml/name-width 30)
 
 ;; undo-tree
 (global-undo-tree-mode)
