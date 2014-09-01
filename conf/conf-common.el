@@ -149,4 +149,7 @@
 ;; always load project-venv-name from dir-locals.el
 (put 'project-venv-name 'safe-local-variable #'stringp)
 
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+
 (provide 'conf-common)

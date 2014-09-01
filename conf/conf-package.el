@@ -12,6 +12,7 @@
   '(
     ace-jump-mode
     ag
+    company
     expand-region
     flycheck
     gitignore-mode
