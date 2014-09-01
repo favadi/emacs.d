@@ -47,28 +47,12 @@
 (add-hook 'sh-mode-hook 'flycheck-mode)
 (add-hook 'rst-mode-hook 'flycheck-mode)
 
-;; auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
-(global-set-key "\M-/" 'auto-complete)
-(setq ac-auto-show-menu nil)
-(setq ac-ignore-case nil)
-;; use C-n, C-p to select
-(setq ac-use-menu-map t)
-(define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map "\C-p" 'ac-previous)
-
-;; Standard Jedi.el setting
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-
 ;; use yaml-mode for salt state files
 (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
 
 ;; yaml
 (add-hook 'yaml-mode-hook
           (lambda ()
-            (auto-complete-mode)
             (local-set-key (kbd "C-j") 'smart-open-line)))
 
 ;; slime
@@ -84,9 +68,6 @@
 
 ;; jinja2
 (add-to-list 'auto-mode-alist '("\\.jinja\\'" . jinja2-mode))
-(add-hook 'jinja2-mode-hook
-          (lambda ()
-            (auto-complete-mode)))
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -99,9 +80,6 @@
             (local-set-key (kbd "C-M-h") 'backward-kill-word)
             (local-set-key (kbd "C-c h") 'rst-mark-section)
             (local-set-key (kbd "C-=") 'er/expand-region)))
-
-(require 'auto-complete-rst)
-(auto-complete-rst-init)
 
 ;; the silver search - ag
 (setq ag-highlight-search t)

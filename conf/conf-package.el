@@ -12,8 +12,6 @@
   '(
     ace-jump-mode
     ag
-    auto-complete
-    auto-complete-rst
     expand-region
     flycheck
     gitignore-mode
@@ -21,7 +19,6 @@
     go-mode
     helm
     helm-projectile
-    jedi
     jinja2-mode
     lua-mode
     magit
