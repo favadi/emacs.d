@@ -151,5 +151,13 @@
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load "company"
+    '(progn
+        (add-to-list 'company-backends 'company-anaconda)))
+(global-set-key (kbd "M-/") 'company-complete-common)
+
+;; anaconda-mode
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'eldoc-mode)
 
 (provide 'conf-common)

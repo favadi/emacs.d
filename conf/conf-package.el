@@ -12,7 +12,9 @@
   '(
     ace-jump-mode
     ag
+    anaconda-mode
     company
+    company-anaconda
     expand-region
     flycheck
     gitignore-mode
