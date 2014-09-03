@@ -11,9 +11,6 @@
 ;; rebinding mark-defun
 (global-set-key (kbd "C-c h") 'mark-defun)
 
-;; rebinding help-command
-(global-set-key (kbd "C-;") 'help-command)
-
 (defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode."
