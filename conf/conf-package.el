@@ -20,6 +20,7 @@
     gitignore-mode
     gnuplot-mode
     go-mode
+    goto-last-change
     helm
     helm-projectile
     jinja2-mode
