@@ -30,4 +30,7 @@ Position the cursor at its beginning, according to the current mode."
 ;; go to last change
 (global-set-key (kbd "C-c /") 'goto-last-change)
 
+(global-set-key (kbd "C-z") nil)
+(global-set-key (kbd "C-x C-z") nil)
+
 (provide 'conf-keyboard)
