@@ -2,7 +2,7 @@
 (require 'package)
 ;; Milkypostman’s Emacs Lisp Package Archive
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 ;; http://blog.zhengdong.me/2012/03/14/how-i-manage-emacs-packages
