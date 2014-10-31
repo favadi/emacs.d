@@ -88,6 +88,7 @@
 (projectile-global-mode)
 (setq projectile-mode-line-lighter "Prj")
 (setq projectile-completion-system 'helm)
+(setq projectile-remember-window-configs t)
 
 ;; smart-mode-line
 (setq sml/no-confirm-load-theme t)
