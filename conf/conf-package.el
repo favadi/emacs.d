@@ -17,6 +17,7 @@
     company-anaconda
     expand-region
     flycheck
+    git-timemachine
     gitignore-mode
     gnuplot-mode
     go-mode
