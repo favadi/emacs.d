@@ -4,7 +4,7 @@
 (tool-bar-mode -1)
 
 ;; load solarized theme
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 
 ;; disable startup message
 (setq inhibit-startup-message t)
