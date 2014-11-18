@@ -163,4 +163,23 @@
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
 
+;; helm-dash
+(defun dash-go-doc ()
+  (interactive)
+  (setq-local helm-dash-docsets '("Go")))
+(add-hook 'go-mode-hook 'dash-go-doc)
+
+(defun dash-salt-doc ()
+  (interactive)
+  (setq-local helm-dash-docsets '("SaltStack")))
+(add-hook 'yaml-mode-hook 'dash-salt-doc)
+
+(defun dash-python-doc ()
+  (interactive)
+  (setq-local helm-dash-docsets '("Python 2")))
+(add-hook 'python-mode-hook 'dash-python-doc)
+
+(global-set-key (kbd "C-c C-o") 'helm-dash-at-point)
+(global-set-key (kbd "C-c o") 'helm-dash)
+
 (provide 'conf-common)

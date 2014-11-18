@@ -23,6 +23,7 @@
     go-mode
     goto-last-change
     helm
+    helm-dash
     helm-projectile
     jinja2-mode
     lua-mode
