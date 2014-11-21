@@ -81,9 +81,6 @@
             (local-set-key (kbd "C-c h") 'rst-mark-section)
             (local-set-key (kbd "C-=") 'er/expand-region)))
 
-;; the silver search - ag
-(setq ag-highlight-search t)
-
 ;; projectile
 (projectile-global-mode)
 (setq projectile-mode-line-lighter "Prj")

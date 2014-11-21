@@ -11,7 +11,6 @@
 (defvar packages-list
   '(
     ace-jump-mode
-    ag
     anaconda-mode
     company
     company-anaconda
@@ -23,6 +22,7 @@
     go-mode
     goto-last-change
     helm
+    helm-ag
     helm-dash
     helm-projectile
     jinja2-mode
