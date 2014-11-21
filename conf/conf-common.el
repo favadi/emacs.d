@@ -183,4 +183,7 @@
 (global-set-key (kbd "C-c C-o") 'helm-dash-at-point)
 (global-set-key (kbd "C-c o") 'helm-dash)
 
+;; go mode
+(add-hook 'before-save-hook #'gofmt-before-save)
+
 (provide 'conf-common)
