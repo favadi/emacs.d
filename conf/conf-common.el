@@ -38,6 +38,9 @@
              '(comment-dwim whole-line-or-region-comment-dwim-2 nil))
 (whole-line-or-region-mode)
 
+;; enble winner mode
+(winner-mode 1)
+
 ;; flycheck
 (require 'flycheck)
 ;; only check if the mode is enabled or the buffer was saved
