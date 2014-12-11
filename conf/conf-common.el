@@ -67,6 +67,7 @@
 (setq lua-indent-level 2)
 
 ;; magit
+(require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; jinja2
