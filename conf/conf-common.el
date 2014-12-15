@@ -185,6 +185,10 @@
 (global-set-key (kbd "C-c o") 'helm-dash)
 
 ;; go mode
+(require 'company-go)
+(eval-after-load "company"
+    '(progn
+        (add-to-list 'company-backends 'company-go)))
 (add-hook 'before-save-hook #'gofmt-before-save)
 
 (provide 'conf-common)

@@ -14,6 +14,7 @@
     anaconda-mode
     company
     company-anaconda
+    company-go
     expand-region
     flycheck
     git-timemachine
