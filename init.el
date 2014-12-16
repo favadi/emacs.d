@@ -46,7 +46,7 @@
 
 ;; change indentation
 (setq-default tab-width 4)
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq tab-stop-list (number-sequence 4 200 4))
 
 ;; use C-h as backspace
