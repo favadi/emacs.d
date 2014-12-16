@@ -41,6 +41,9 @@
 ;; display column number in mode line
 (column-number-mode 1)
 
+;; remove highlight-changes-mode indicator
+(diminish 'highlight-changes-mode)
+
 ;; show buffer file name in title bar
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -105,6 +108,7 @@
 ;; smartparens
 (use-package smartparens
   :ensure t
+  :diminish smartparens-mode
   :config
   (progn
     (require 'smartparens-config)
@@ -125,7 +129,8 @@
 
 ;; magit
 (use-package magit
-  :ensure t)
+  :ensure t
+  :diminish magit-auto-revert-mode)
 
 ;; smart-mode-line
 (use-package smart-mode-line
@@ -139,6 +144,7 @@
 ;; helm
 (use-package helm
   :ensure t
+  :diminish helm-mode
   :bind (("M-x" . helm-M-x)
          ("C-x C-r" . helm-recentf)
          ("M-y" . helm-show-kill-ring)
@@ -206,12 +212,14 @@
 ;; undo-tree
 (use-package undo-tree
   :ensure t
+  :diminish undo-tree-mode
   :config
   (global-undo-tree-mode 1))
 
 ;; whole-line-ore-region
 (use-package whole-line-or-region
   :ensure t
+  :diminish whole-line-or-region-mode
   :config
   (progn
     (defadvice whole-line-or-region-kill-region
@@ -228,6 +236,7 @@
 ;; ws-butler
 (use-package ws-butler
   :ensure t
+  :diminish ws-butler-mode
   :config
   (progn
     (add-hook 'prog-mode-hook 'ws-butler-mode)
@@ -265,6 +274,7 @@
 ;; company
 (use-package company
   :ensure t
+  :diminish company-mode
   :init
   (add-hook 'after-init-hook 'global-company-mode)
   :bind
