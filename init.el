@@ -276,19 +276,12 @@
   :ensure t
   :bind (("C-c C-o" . helm-dash-at-point)
          ("C-c o" . helm-dash))
-  :config
+  :init
   (progn
-    (defun dash-go-doc ()
-      (interactive)
-      (setq-local helm-dash-docsets '("Go")))
-    (add-hook 'go-mode-hook 'dash-go-doc)
+    (add-hook 'go-mode-hook (lambda()
+                              (setq-local helm-dash-docsets '("Go"))))
 
-    (defun dash-salt-doc ()
-      (interactive)
-      (setq-local helm-dash-docsets '("SaltStack")))
-    (add-hook 'yaml-mode-hook 'dash-salt-doc)
-
-    (defun dash-python-doc ()
-      (interactive)
-      (setq-local helm-dash-docsets '("Python 2")))
-    (add-hook 'python-mode-hook 'dash-python-doc)))
+    (add-hook 'yaml-mode-hook (lambda()
+                                (setq-local helm-dash-docsets '("SaltStack"))))
+    (add-hook 'python-mode-hook (lambda()
+                                (setq-local helm-dash-docsets '("Python"))))))
