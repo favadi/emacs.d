@@ -189,7 +189,7 @@
     (add-hook 'before-save-hook #'gofmt-before-save)))
 
 ;; rst-mode
-(use-package rst-mode
+(use-package rst
   :config
   (progn
     (local-set-key (kbd "C-M-h") 'backward-kill-word)
