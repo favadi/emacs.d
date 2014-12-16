@@ -206,6 +206,17 @@
   :config
   (global-undo-tree-mode 1))
 
+;; whole-line-ore-region
+(use-package whole-line-or-region
+  :ensure t
+  :config
+  (progn
+    (defadvice whole-line-or-region-kill-region
+      (before whole-line-or-region-kill-read-only-ok activate)
+      (interactive "p")
+      (unless kill-read-only-ok (barf-if-buffer-read-only)))
+    (whole-line-or-region-mode 1)))
+
 ;; ws-butler
 (use-package ws-butler
   :ensure t
