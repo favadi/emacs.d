@@ -29,7 +29,7 @@
 ;; attached to it
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
-         kill-buffer-query-functions))
+        kill-buffer-query-functions))
 
 ;; making tooltips appear in the echo area
 (tooltip-mode 0)
@@ -137,19 +137,19 @@
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
-		 ("C-x C-r" . helm-recentf)
-		 ("M-y" . helm-show-kill-ring)
-		 ("C-x b" . helm-mini)
-		 ("C-x C-f" . helm-find-files))
+         ("C-x C-r" . helm-recentf)
+         ("M-y" . helm-show-kill-ring)
+         ("C-x b" . helm-mini)
+         ("C-x C-f" . helm-find-files))
   :config
   (progn
-	(require 'helm-config)
-	(helm-mode 1)
-	(setq helm-command-prefix-key "C-c l")
-	(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-	(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-	(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-	(define-key helm-map (kbd "C-z")  'helm-select-action)))
+    (require 'helm-config)
+    (helm-mode 1)
+    (setq helm-command-prefix-key "C-c l")
+    (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+    (define-key helm-map (kbd "C-z")  'helm-select-action)))
 
 ;; helm-ag
 (use-package helm-ag
@@ -160,7 +160,7 @@
   :ensure t
   :config
   (progn
-	(projectile-global-mode)
+    (projectile-global-mode)
     (setq projectile-mode-line-lighter "Prj")
     (setq projectile-remember-window-configs t)))
 
@@ -169,7 +169,7 @@
   :ensure t
   :config
   (progn
-	(helm-projectile-on)))
+    (helm-projectile-on)))
 
 ;; yaml-mode
 (use-package yaml-mode
@@ -211,29 +211,29 @@
   :ensure t
   :config
   (progn
-	(add-hook 'prog-mode-hook 'ws-butler-mode)
-	(add-hook 'jinja2-mode-hook 'ws-butler-mode)
-	(add-hook 'rst-mode-hook 'ws-butler-mode)	
-	(add-hook 'yaml-mode-hook 'ws-butler-mode)))
+    (add-hook 'prog-mode-hook 'ws-butler-mode)
+    (add-hook 'jinja2-mode-hook 'ws-butler-mode)
+    (add-hook 'rst-mode-hook 'ws-butler-mode)
+    (add-hook 'yaml-mode-hook 'ws-butler-mode)))
 
 ;; virtualenvwrapper
 (use-package virtualenvwrapper
   :ensure t
   :config
   (progn
-	(add-hook 'python-mode-hook (lambda ()
-								  (hack-local-variables)
-								  (when (boundp 'project-venv-name)
-									(venv-workon project-venv-name))))
-	(put 'project-venv-name 'safe-local-variable #'stringp)))
+    (add-hook 'python-mode-hook (lambda ()
+                                  (hack-local-variables)
+                                  (when (boundp 'project-venv-name)
+                                    (venv-workon project-venv-name))))
+    (put 'project-venv-name 'safe-local-variable #'stringp)))
 
 ;; anaconda
 (use-package anaconda-mode
   :ensure t
   :config
   (progn
-	(add-hook 'python-mode-hook 'anaconda-mode)
-	(add-hook 'python-mode-hook 'eldoc-mode)))
+    (add-hook 'python-mode-hook 'anaconda-mode)
+    (add-hook 'python-mode-hook 'eldoc-mode)))
 
 ;; company-anaconda
 (use-package company-anaconda
@@ -252,27 +252,27 @@
   ("M-/" . company-complete-common)
   :config
   (progn
-	(add-to-list 'company-backends 'company-anaconda)
-	(add-to-list 'company-backends 'company-go)))
+    (add-to-list 'company-backends 'company-anaconda)
+    (add-to-list 'company-backends 'company-go)))
 
 ;; helm-dash
 (use-package helm-dash
   :ensure t
   :bind (("C-c C-o" . helm-dash-at-point)
-		 ("C-c o" . helm-dash))
+         ("C-c o" . helm-dash))
   :config
   (progn
-	(defun dash-go-doc ()
-	  (interactive)
-	  (setq-local helm-dash-docsets '("Go")))
-	(add-hook 'go-mode-hook 'dash-go-doc)
-	
-	(defun dash-salt-doc ()
-	  (interactive)
-	  (setq-local helm-dash-docsets '("SaltStack")))
-	(add-hook 'yaml-mode-hook 'dash-salt-doc)
+    (defun dash-go-doc ()
+      (interactive)
+      (setq-local helm-dash-docsets '("Go")))
+    (add-hook 'go-mode-hook 'dash-go-doc)
 
-	(defun dash-python-doc ()
-	  (interactive)
-	  (setq-local helm-dash-docsets '("Python 2")))
-	(add-hook 'python-mode-hook 'dash-python-doc)))
+    (defun dash-salt-doc ()
+      (interactive)
+      (setq-local helm-dash-docsets '("SaltStack")))
+    (add-hook 'yaml-mode-hook 'dash-salt-doc)
+
+    (defun dash-python-doc ()
+      (interactive)
+      (setq-local helm-dash-docsets '("Python 2")))
+    (add-hook 'python-mode-hook 'dash-python-doc)))
