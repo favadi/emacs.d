@@ -38,6 +38,9 @@
 ;; highlight current line
 (global-hl-line-mode 1)
 
+;; display column number in mode line
+(column-number-mode 1)
+
 ;; show buffer file name in title bar
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
