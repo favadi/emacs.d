@@ -217,6 +217,11 @@
       (unless kill-read-only-ok (barf-if-buffer-read-only)))
     (whole-line-or-region-mode 1)))
 
+;; evil-nerd-commenter
+(use-package evil-nerd-commenter
+  :ensure t
+  :bind (("M-;" . evilnc-comment-or-uncomment-lines)))
+
 ;; ws-butler
 (use-package ws-butler
   :ensure t
