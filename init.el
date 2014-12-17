@@ -124,9 +124,14 @@
   (progn
     (setq flycheck-check-syntax-automatically '(mode-enabled save))
     (add-hook 'python-mode-hook 'flycheck-mode)
+    (add-hook 'go-mode-hook 'flycheck-mode)
     (add-hook 'lua-mode-hook 'flycheck-mode)
     (add-hook 'sh-mode-hook 'flycheck-mode)
     (add-hook 'rst-mode-hook 'flycheck-mode)))
+
+;; go-flycheck
+(use-package go-flycheck
+  :load-path "~/go/src/github.com/dougm/goflymake")
 
 ;; magit
 (use-package magit
@@ -196,7 +201,16 @@
   :ensure t
   :config
   (progn
-    (add-hook 'before-save-hook #'gofmt-before-save)))
+    (add-hook 'before-save-hook #'gofmt-before-save)
+    (add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd "M-.") #'godef-jump)))))
+
+;; go-eldoc
+(use-package go-eldoc
+  :ensure t
+  :config
+  (progn
+    (add-hook 'go-mode-hook 'go-eldoc-setup)))
 
 ;; rst-mode
 (use-package rst
