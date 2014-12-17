@@ -42,7 +42,8 @@
 (column-number-mode 1)
 
 ;; remove highlight-changes-mode indicator
-(diminish 'highlight-changes-mode)
+(add-hook 'after-init-hook
+          '(lambda() progn (diminish 'highlight-changes-mode)))
 
 ;; show buffer file name in title bar
 (setq frame-title-format
