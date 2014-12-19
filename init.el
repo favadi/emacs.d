@@ -42,8 +42,8 @@
 (column-number-mode 1)
 
 ;; remove highlight-changes-mode indicator
-(add-hook 'after-init-hook
-          '(lambda() progn (diminish 'highlight-changes-mode)))
+;; (add-hook 'after-init-hook
+;;           '(progn (diminish 'highlight-changes-mode)))
 
 ;; show buffer file name in title bar
 (setq frame-title-format
@@ -247,6 +247,10 @@
 (use-package evil-nerd-commenter
   :ensure t
   :bind (("M-;" . evilnc-comment-or-uncomment-lines)))
+
+;; hilit-chg
+(use-package hilit-chg
+  :diminish highlight-changes-mode)
 
 ;; ws-butler
 (use-package ws-butler
