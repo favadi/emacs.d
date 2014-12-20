@@ -162,6 +162,7 @@
     (helm-mode 1)
     (setq helm-command-prefix-key "C-c l")
     (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+    (define-key helm-map (kbd "C-h") nil)
     (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
     (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
     (define-key helm-map (kbd "C-z")  'helm-select-action)))
