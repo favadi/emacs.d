@@ -320,3 +320,11 @@
                                 (setq-local helm-dash-docsets '("SaltStack"))))
     (add-hook 'python-mode-hook (lambda()
                                 (setq-local helm-dash-docsets '("Python"))))))
+
+;; ace-jump-mode
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-c SPC" . ace-jump-mode)
+  :config
+  (progn
+    (setq ace-jump-mode-scope 'window)))
