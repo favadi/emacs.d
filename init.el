@@ -216,8 +216,10 @@
 (use-package rst
   :config
   (progn
-    (local-set-key (kbd "C-M-h") 'backward-kill-word)
-    (local-set-key (kbd "C-c h") 'rst-mark-section)))
+    (add-hook 'rst-mode-hook
+              (lambda()
+                (local-set-key (kbd "C-M-h") 'backward-kill-word)
+                (local-set-key (kbd "C-c h") 'rst-mark-section)))))
 
 ;; web-mode
 (use-package web-mode
