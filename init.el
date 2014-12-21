@@ -177,7 +177,7 @@
   :config
   (progn
     (projectile-global-mode)
-    (setq projectile-mode-line-lighter "Prj")
+    (setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
     (setq projectile-remember-window-configs t)))
 
 ;; helm-projectile
