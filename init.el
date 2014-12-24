@@ -330,3 +330,11 @@
   :config
   (progn
     (setq ace-jump-mode-scope 'window)))
+
+;; quickrun
+(use-package quickrun
+  :ensure t
+  :bind ("C-c q" . quickrun)
+  :config
+  (progn
+    (setq quickrun-timeout-seconds nil)))
