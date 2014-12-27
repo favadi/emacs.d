@@ -117,22 +117,6 @@
     (setq sp-autoescape-string-quote nil)
     (show-smartparens-global-mode 1)))
 
-;; flycheck
-(use-package flycheck
-  :ensure t
-  :config
-  (progn
-    (setq flycheck-check-syntax-automatically '(mode-enabled save))
-    (add-hook 'python-mode-hook 'flycheck-mode)
-    (add-hook 'go-mode-hook 'flycheck-mode)
-    (add-hook 'lua-mode-hook 'flycheck-mode)
-    (add-hook 'sh-mode-hook 'flycheck-mode)
-    (add-hook 'rst-mode-hook 'flycheck-mode)))
-
-;; go-flycheck
-(use-package go-flycheck
-  :load-path "~/go/src/github.com/dougm/goflymake")
-
 ;; magit
 (use-package magit
   :ensure t
@@ -338,3 +322,19 @@
   :config
   (progn
     (setq quickrun-timeout-seconds nil)))
+
+;; flycheck
+(use-package flycheck
+  :ensure t
+  :config
+  (progn
+    (setq flycheck-check-syntax-automatically '(mode-enabled save))
+    (add-hook 'python-mode-hook 'flycheck-mode)
+    (add-hook 'go-mode-hook 'flycheck-mode)
+    (add-hook 'lua-mode-hook 'flycheck-mode)
+    (add-hook 'sh-mode-hook 'flycheck-mode)
+    (add-hook 'rst-mode-hook 'flycheck-mode)))
+
+;; go-flycheck
+(use-package go-flycheck
+  :load-path "~/go/src/github.com/dougm/goflymake")
