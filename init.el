@@ -41,10 +41,6 @@
 ;; display column number in mode line
 (column-number-mode 1)
 
-;; remove highlight-changes-mode indicator
-;; (add-hook 'after-init-hook
-;;           '(progn (diminish 'highlight-changes-mode)))
-
 ;; show buffer file name in title bar
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
