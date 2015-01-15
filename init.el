@@ -201,6 +201,8 @@
   (progn
     (add-hook 'rst-mode-hook
               (lambda()
+                (setq-local fill-column 80)
+                (turn-on-auto-fill)
                 (local-set-key (kbd "C-M-h") 'backward-kill-word)
                 (local-set-key (kbd "C-c h") 'rst-mark-section)))))
 
