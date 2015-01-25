@@ -170,7 +170,11 @@
 ;; yaml-mode
 (use-package yaml-mode
   :ensure t
-  :mode "\\.sls$")
+  :mode "\\.sls$"
+  :config
+  (progn
+    (add-hook 'yaml-mode-hook (lambda ()
+                                (setq require-final-newline t)))))
 
 ;; jinja2-mode
 (use-package jinja2-mode
