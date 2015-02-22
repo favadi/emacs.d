@@ -4,8 +4,9 @@ ac-comphist.dat
 auto-save-list
 bookmarks
 elpa
+eshell
 projectile-bookmarks.eld
 projectile.cache
+request
 session.*
 tramp
-eshell
