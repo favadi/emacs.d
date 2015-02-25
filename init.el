@@ -160,6 +160,17 @@
     (setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
     (setq projectile-remember-window-configs t)))
 
+;; perspective-el
+(use-package perspective
+  :ensure t
+  :config
+  (progn
+    (persp-mode)))
+
+;; persp-projectile
+(use-package persp-projectile
+  :ensure t)
+
 ;; helm-projectile
 (use-package helm-projectile
   :ensure t
