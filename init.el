@@ -351,26 +351,3 @@
 ;; go-flycheck
 (use-package go-flycheck
   :load-path "~/go/src/github.com/dougm/goflymake")
-
-;; simplenote2.el
-(use-package simplenote2
-  :ensure t
-  :init
-  (progn
-    (setq simplenote2-auth-file "~/.simplenote")
-    (if (file-exists-p simplenote2-auth-file)
-        (progn (setq lines
-                     (with-temp-buffer
-                       (insert-file-contents simplenote2-auth-file)
-                       (split-string (buffer-string) "\n" t)))
-               (setq simplenote2-email (car lines))
-               (setq simplenote2-password (nth 1 lines))))
-    (simplenote2-setup))
-  :config
-  :bind (("C-c s b" . simplenote2-browse)
-         ("C-c s p" . simplenote2-push-buffer)
-         ("C-c s P" . simplenote2-pull-buffer)
-         ("C-c s f" . simplenote2-filter-note-by-tag)
-         ("C-c s t" . simplenote2-add-tag)
-         ("C-c s i" . simplenote2-set-pinnped)
-         ("C-c s m" . simplenote2-set-markdown)))
