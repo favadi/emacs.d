@@ -245,10 +245,11 @@
       (unless kill-read-only-ok (barf-if-buffer-read-only)))
     (whole-line-or-region-mode 1)))
 
-;; evil-nerd-commenter
-(use-package evil-nerd-commenter
+;; comment-dwim-2
+(use-package comment-dwim-2
   :ensure t
-  :bind (("M-;" . evilnc-comment-or-uncomment-lines)))
+  :bind
+  ("M-;" . comment-dwim-2))
 
 ;; hilit-chg
 (use-package hilit-chg
