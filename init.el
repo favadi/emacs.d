@@ -118,6 +118,10 @@
   :ensure t
   :diminish magit-auto-revert-mode)
 
+;; gitignore-mode
+(use-package gitignore-mode
+  :ensure t)
+
 ;; smart-mode-line
 (use-package smart-mode-line
   :ensure t
