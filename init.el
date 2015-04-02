@@ -116,7 +116,10 @@
 ;; magit
 (use-package magit
   :ensure t
-  :diminish magit-auto-revert-mode)
+  :diminish magit-auto-revert-mode
+  :config
+  (progn
+    (setq magit-last-seen-setup-instructions "1.4.0")))
 
 ;; gitignore-mode
 (use-package gitignore-mode
