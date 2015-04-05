@@ -359,3 +359,8 @@
 ;; go-flycheck
 (use-package go-flycheck
   :load-path "~/go/src/github.com/dougm/goflymake")
+
+;; markdown-mode
+(use-package markdown-mode
+  :ensure t
+  :mode "\\.md\\'")
