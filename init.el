@@ -165,6 +165,7 @@
   (progn
     (projectile-global-mode)
     (setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
+    (setq projectile-completion-system 'helm)
     (setq projectile-remember-window-configs t)))
 
 ;; perspective-el
@@ -176,7 +177,10 @@
 
 ;; persp-projectile
 (use-package persp-projectile
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    (define-key projectile-mode-map (kbd "C-c p q") 'projectile-persp-switch-project)))
 
 ;; helm-projectile
 (use-package helm-projectile
