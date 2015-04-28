@@ -377,6 +377,11 @@
   :ensure t
   :config (auto-package-update-maybe))
 
+;; switch-window
+(use-package switch-window
+  :ensure t
+  :bind ("C-x o" . switch-window))
+
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
