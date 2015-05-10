@@ -1,7 +1,7 @@
 ;; Use package.el to manage packages
 (require 'package)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 ;; use-package
@@ -66,9 +66,6 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-;; switch to most recent buffer
-(global-set-key (kbd "C-c b") 'mode-line-other-buffer)
-
 ;; use ibuffer instead of buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -103,6 +100,8 @@
   :ensure t
   :config
   (progn
+    (setq solarized-use-variable-pitch nil)
+    (setq solarized-scale-org-headlines nil)
     (load-theme 'solarized-light t)))
 
 ;; smartparens
@@ -381,6 +380,24 @@
 (use-package switch-window
   :ensure t
   :bind ("C-x o" . switch-window))
+
+;; org-mode
+(use-package org
+  :ensure t
+  :config
+  (progn
+    (setq org-catch-invisible-edits 'show-and-error)
+    (setq org-enforce-todo-dependencies t)
+    (setq org-enforce-todo-checkbox-dependencies)
+    (setq org-src-fontify-natively t)
+    (setq org-directory "~/Dropbox/org")
+    (setq org-agenda-files (quote ("~/Dropbox/org")))
+    (setq org-default-notes-file (concat org-directory "/notes.org")))
+  :bind (
+         ("C-c l" . org-store-link)
+         ("C-c c" . org-capture)
+         ("C-c a" . org-agenda)
+         ("C-c b" . org-iswitchb)))
 
 ;; help key binding
 ;; for some reason, it has to defined after helm config
