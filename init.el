@@ -66,9 +66,6 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-;; switch to most recent buffer
-(global-set-key (kbd "C-c b") 'mode-line-other-buffer)
-
 ;; use ibuffer instead of buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
