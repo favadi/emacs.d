@@ -382,6 +382,11 @@
   :ensure t
   :bind ("C-x o" . switch-window))
 
+;; expand-region
+(use-package expand-region
+  :ensure t
+  :bind ("C-=" . er/expand-region))
+
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
