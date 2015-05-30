@@ -102,6 +102,12 @@
   (progn
     (load-theme 'solarized-light t)))
 
+
+;; Mac OSX specific settings
+(if (eq system-type 'darwin)
+    (set-frame-font "PragmataPro 13")
+)
+
 ;; smartparens
 (use-package smartparens
   :ensure t
@@ -387,3 +393,10 @@
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
+
+;; exec-path-from-shell
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
