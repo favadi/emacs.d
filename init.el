@@ -317,21 +317,6 @@
     (add-hook 'python-mode-hook 'my/python-mode-hook)
     (add-to-list 'company-backends 'company-go)))
 
-;; helm-dash
-(use-package helm-dash
-  :ensure t
-  :bind (("C-c C-o" . helm-dash-at-point)
-         ("C-c o" . helm-dash))
-  :init
-  (progn
-    (add-hook 'go-mode-hook (lambda()
-                              (setq-local helm-dash-docsets '("Go"))))
-
-    (add-hook 'yaml-mode-hook (lambda()
-                                (setq-local helm-dash-docsets '("SaltStack"))))
-    (add-hook 'python-mode-hook (lambda()
-                                (setq-local helm-dash-docsets '("Python"))))))
-
 ;; ace-jump-mode
 (use-package ace-jump-mode
   :ensure t
