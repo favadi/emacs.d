@@ -13,6 +13,16 @@
 (require 'diminish)
 (require 'bind-key)
 
+;; exec-path-from-shell
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "GOPATH")
+    (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
+    ))
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode 0))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -101,7 +111,6 @@
   :config
   (progn
     (load-theme 'solarized-light t)))
-
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
@@ -317,21 +326,6 @@
     (add-hook 'python-mode-hook 'my/python-mode-hook)
     (add-to-list 'company-backends 'company-go)))
 
-;; helm-dash
-(use-package helm-dash
-  :ensure t
-  :bind (("C-c C-o" . helm-dash-at-point)
-         ("C-c o" . helm-dash))
-  :init
-  (progn
-    (add-hook 'go-mode-hook (lambda()
-                              (setq-local helm-dash-docsets '("Go"))))
-
-    (add-hook 'yaml-mode-hook (lambda()
-                                (setq-local helm-dash-docsets '("SaltStack"))))
-    (add-hook 'python-mode-hook (lambda()
-                                (setq-local helm-dash-docsets '("Python"))))))
-
 ;; ace-jump-mode
 (use-package ace-jump-mode
   :ensure t
@@ -387,10 +381,3 @@
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
-
-;; exec-path-from-shell
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
