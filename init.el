@@ -13,6 +13,16 @@
 (require 'diminish)
 (require 'bind-key)
 
+;; exec-path-from-shell
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "GOPATH")
+    (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
+    ))
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode 0))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -372,10 +382,3 @@
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
-
-;; exec-path-from-shell
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
