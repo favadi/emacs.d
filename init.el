@@ -112,7 +112,6 @@
   (progn
     (load-theme 'solarized-light t)))
 
-
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
     (set-frame-font "PragmataPro 13")
