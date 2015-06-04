@@ -114,7 +114,7 @@
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
-    (set-frame-font "PragmataPro 13")
+    (set-frame-font "Pragmata Pro 13")
 )
 
 ;; smartparens
