@@ -172,6 +172,11 @@
 (use-package helm-ag
   :ensure t)
 
+;; workaround for error:
+;; Symbol's value as variable is void: grep-find-ignored-files
+;; https://github.com/bbatsov/projectile/issues/821
+(require 'grep)
+
 ;; projectile
 (use-package projectile
   :ensure t
