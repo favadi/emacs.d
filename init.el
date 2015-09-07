@@ -210,12 +210,7 @@
 
 ;; yaml-mode
 (use-package yaml-mode
-  :ensure t
-  :mode "\\.sls$"
-  :config
-  (progn
-    (add-hook 'yaml-mode-hook (lambda ()
-                                (setq require-final-newline t)))))
+  :ensure t)
 
 ;; jinja2-mode
 (use-package jinja2-mode
@@ -389,3 +384,11 @@
 ;; help key binding
 ;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
+
+;; Salt States mode
+(use-package salt-mode
+  :ensure t
+  :config
+  (progn
+    (add-hook 'yaml-mode-hook (lambda ()
+                                (setq require-final-newline t)))))
