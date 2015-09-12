@@ -392,3 +392,7 @@
   (progn
     (add-hook 'yaml-mode-hook (lambda ()
                                 (setq require-final-newline t)))))
+
+;; dockerfile-mode
+(use-package dockerfile-mode
+  :ensure t)
