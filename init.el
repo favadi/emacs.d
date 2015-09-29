@@ -366,11 +366,6 @@
   :ensure t
   :mode "\\.md\\'")
 
-;; auto-package-update
-(use-package auto-package-update
-  :ensure t
-  :config (auto-package-update-maybe))
-
 ;; switch-window
 (use-package switch-window
   :ensure t
