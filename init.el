@@ -391,3 +391,7 @@
 ;; dockerfile-mode
 (use-package dockerfile-mode
   :ensure t)
+
+;; elixir
+(use-package elixir-mode
+  :ensure t)
