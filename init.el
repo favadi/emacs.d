@@ -105,12 +105,12 @@
 ;; use trash
 (setq delete-by-moving-to-trash t)
 
-;; solarized-theme
-(use-package solarized-theme
+;; color-theme-sanityinc-tomorrow
+(use-package color-theme-sanityinc-tomorrow
   :ensure t
   :config
   (progn
-    (load-theme 'solarized-light t)))
+    (load-theme 'sanityinc-tomorrow-day t)))
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
