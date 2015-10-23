@@ -384,3 +384,5 @@
 ;; elixir
 (use-package elixir-mode
   :ensure t)
+
+(setq mac-option-modifier 'meta)
