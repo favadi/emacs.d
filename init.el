@@ -358,14 +358,6 @@
     (add-hook 'sh-mode-hook 'flycheck-mode)
     (add-hook 'rst-mode-hook 'flycheck-mode)))
 
-;; go-flycheck
-(eval-and-compile
-  (defun go-flycheck-load-path ()
-    (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake")))
-(use-package go-flycheck
-  :load-path (lambda () (list (go-flycheck-load-path))))
-
-
 ;; markdown-mode
 (use-package markdown-mode
   :ensure t
