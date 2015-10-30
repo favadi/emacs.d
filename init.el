@@ -167,7 +167,7 @@
     (define-key projectile-mode-map (kbd "C-c p q")
       'projectile-persp-switch-project)))
 
-;; ido
+;; flx-ido
 (use-package flx-ido
   :ensure t
   :config
@@ -177,6 +177,26 @@
     (flx-ido-mode 1)
     (setq ido-enable-flex-matching t)
     (setq ido-use-faces nil)))
+
+;; ido-ubiquitous
+(use-package ido-ubiquitous
+  :ensure t
+  :config
+  (progn
+    (ido-ubiquitous-mode 1)))
+
+;; smex
+(use-package smex
+  :ensure t
+  :bind
+  (("M-x" . smex))
+  :config
+  (progn
+    (smex-initialize)))
+
+;; ido-yes-or-no
+(use-package ido-yes-or-no
+  :ensure t)
 
 ;; yaml-mode
 (use-package yaml-mode
