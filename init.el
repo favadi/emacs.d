@@ -140,30 +140,6 @@
 (use-package gitignore-mode
   :ensure t)
 
-;; helm
-(use-package helm
-  :ensure t
-  :diminish helm-mode
-  :bind (("M-x" . helm-M-x)
-         ("C-x C-r" . helm-recentf)
-         ("M-y" . helm-show-kill-ring)
-         ("C-x b" . helm-mini)
-         ("C-x C-f" . helm-find-files))
-  :config
-  (progn
-    (require 'helm-config)
-    (helm-mode 1)
-    (setq helm-command-prefix-key "C-c l")
-    (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-    (define-key helm-map (kbd "C-h") nil)
-    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-    (define-key helm-map (kbd "C-z")  'helm-select-action)))
-
-;; helm-ag
-(use-package helm-ag
-  :ensure t)
-
 ;; projectile
 (use-package projectile
   :ensure t
@@ -172,7 +148,6 @@
     (projectile-global-mode)
     (setq projectile-mode-line
           '(:eval (format " [%s]" (projectile-project-name))))
-    (setq projectile-completion-system 'helm)
     (setq projectile-remember-window-configs t)))
 
 ;; perspective-el
@@ -188,14 +163,19 @@
   :ensure t
   :config
   (progn
-    (define-key projectile-mode-map (kbd "C-c p q") 'projectile-persp-switch-project)))
+    (define-key projectile-mode-map (kbd "C-c p q")
+      'projectile-persp-switch-project)))
 
-;; helm-projectile
-(use-package helm-projectile
+;; ido
+(use-package flx-ido
   :ensure t
   :config
   (progn
-    (helm-projectile-on)))
+    (ido-mode 1)
+    (ido-everywhere 1)
+    (flx-ido-mode 1)
+    (setq ido-enable-flex-matching t)
+    (setq ido-use-faces nil)))
 
 ;; yaml-mode
 (use-package yaml-mode
