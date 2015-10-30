@@ -115,8 +115,9 @@
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
-    (set-frame-font "Input Mono Compressed 13")
-)
+    (progn
+      (set-frame-font "Input Mono Compressed 13")
+      (setq mac-option-modifier 'meta)))
 
 ;; smartparens
 (use-package smartparens
@@ -343,7 +344,6 @@
   :bind ("C-=" . er/expand-region))
 
 ;; help key binding
-;; for some reason, it has to defined after helm config
 (global-set-key (kbd "C-z") 'help-command)
 
 ;; dockerfile-mode
@@ -353,5 +353,3 @@
 ;; elixir
 (use-package elixir-mode
   :ensure t)
-
-(setq mac-option-modifier 'meta)
