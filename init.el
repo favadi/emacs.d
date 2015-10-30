@@ -140,15 +140,6 @@
 (use-package gitignore-mode
   :ensure t)
 
-;; smart-mode-line
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (progn
-    (setq sml/no-confirm-load-theme t)
-    (sml/setup)
-    (sml/apply-theme 'respectful)))
-
 ;; helm
 (use-package helm
   :ensure t
@@ -179,7 +170,8 @@
   :config
   (progn
     (projectile-global-mode)
-    (setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
+    (setq projectile-mode-line
+          '(:eval (format " [%s]" (projectile-project-name))))
     (setq projectile-completion-system 'helm)
     (setq projectile-remember-window-configs t)))
 
@@ -188,6 +180,7 @@
   :ensure t
   :config
   (progn
+    (setq persp-show-modestring nil)
     (persp-mode)))
 
 ;; persp-projectile
