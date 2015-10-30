@@ -141,6 +141,10 @@
 (use-package gitignore-mode
   :ensure t)
 
+;; ag.el
+(use-package ag
+  :ensure t)
+
 ;; projectile
 (use-package projectile
   :ensure t
