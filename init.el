@@ -21,6 +21,7 @@
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "GOPATH")
     (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
+    (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
     ))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
