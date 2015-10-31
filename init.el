@@ -1,7 +1,7 @@
 ;; Use package.el to manage packages
 (require 'package)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;; use-package
@@ -211,11 +211,6 @@
     (add-hook 'yaml-mode-hook (lambda ()
                                 (setq require-final-newline t)))))
 
-;; jinja2-mode
-(use-package jinja2-mode
-  :ensure t
-  :mode "\\.jinja\\'")
-
 ;; go-mode
 (use-package go-mode
   :ensure t
@@ -261,19 +256,11 @@
 (use-package whole-line-or-region
   :ensure t
   :diminish whole-line-or-region-mode
+  :bind
+  ("M-;" . whole-line-or-region-comment-dwim-2)
   :config
   (progn
-    (defadvice whole-line-or-region-kill-region
-      (before whole-line-or-region-kill-read-only-ok activate)
-      (interactive "p")
-      (unless kill-read-only-ok (barf-if-buffer-read-only)))
     (whole-line-or-region-mode 1)))
-
-;; comment-dwim-2
-(use-package comment-dwim-2
-  :ensure t
-  :bind
-  ("M-;" . comment-dwim-2))
 
 ;; hilit-chg
 (use-package hilit-chg
@@ -289,17 +276,6 @@
     (add-hook 'jinja2-mode-hook 'ws-butler-mode)
     (add-hook 'rst-mode-hook 'ws-butler-mode)
     (add-hook 'yaml-mode-hook 'ws-butler-mode)))
-
-;; virtualenvwrapper
-(use-package virtualenvwrapper
-  :ensure t
-  :config
-  (progn
-    (add-hook 'python-mode-hook (lambda ()
-                                  (hack-local-variables)
-                                  (when (boundp 'project-venv-name)
-                                    (venv-workon project-venv-name))))
-    (put 'project-venv-name 'safe-local-variable #'stringp)))
 
 ;; company-go
 (use-package company-go
@@ -356,11 +332,6 @@
 (use-package markdown-mode
   :ensure t
   :mode "\\.md\\'")
-
-;; switch-window
-(use-package switch-window
-  :ensure t
-  :bind ("C-x o" . switch-window))
 
 ;; expand-region
 (use-package expand-region
