@@ -348,3 +348,9 @@
 ;; elixir
 (use-package elixir-mode
   :ensure t)
+
+;; install packages not available in melpa stable
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+
+;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
+(require 'jinja2-mode)
