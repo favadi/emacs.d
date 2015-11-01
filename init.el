@@ -300,13 +300,17 @@
     (add-hook 'python-mode-hook 'my/python-mode-hook)
     (add-to-list 'company-backends 'company-go)))
 
-;; ace-jump-mode
-(use-package ace-jump-mode
+;; avy
+(use-package avy
   :ensure t
-  :bind ("C-c SPC" . ace-jump-mode)
-  :config
-  (progn
-    (setq ace-jump-mode-scope 'window)))
+  :bind
+  (("C-c SPC" . avy-goto-word-1)))
+
+;; ace-window
+(use-package ace-window
+  :ensure t
+  :bind
+  (("C-x o" . ace-window)))
 
 ;; quickrun
 (use-package quickrun
