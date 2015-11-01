@@ -32,9 +32,6 @@
 ;; disable startup message
 (setq inhibit-startup-message t)
 
-;; getting rid of the "yes or no" prompt and replace it with "y or n"
-(fset 'yes-or-no-p 'y-or-n-p)
-
 ;; disable confirmation if a file or buffer does not exist when you
 ;; use C-x C-f or C-x b
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -200,7 +197,10 @@
 
 ;; ido-yes-or-no
 (use-package ido-yes-or-no
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    (ido-yes-or-no-mode 1)))
 
 ;; yaml-mode
 (use-package yaml-mode
