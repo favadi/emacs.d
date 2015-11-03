@@ -203,6 +203,14 @@
   (progn
     (ido-yes-or-no-mode 1)))
 
+;; ido-vertical-mode
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (progn
+    (ido-vertical-mode 1)
+    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+
 ;; yaml-mode
 (use-package yaml-mode
   :ensure t
