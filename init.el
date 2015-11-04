@@ -265,8 +265,8 @@
 (use-package whole-line-or-region
   :ensure t
   :diminish whole-line-or-region-mode
-  :bind
-  ("M-;" . whole-line-or-region-comment-dwim-2)
+  :init
+  (bind-key "M-;" 'whole-line-or-region-comment-dwim-2)
   :config
   (progn
     (whole-line-or-region-mode 1)))
