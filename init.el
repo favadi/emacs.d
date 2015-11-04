@@ -303,14 +303,6 @@
   :bind
   (("C-x o" . ace-window)))
 
-;; quickrun
-(use-package quickrun
-  :ensure t
-  :bind ("C-c q" . quickrun)
-  :config
-  (progn
-    (setq quickrun-timeout-seconds nil)))
-
 ;; flycheck
 (use-package flycheck
   :ensure t
