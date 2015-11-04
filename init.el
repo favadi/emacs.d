@@ -257,10 +257,6 @@
     (bind-key "M-;" 'whole-line-or-region-comment-dwim-2)
     (whole-line-or-region-mode 1)))
 
-;; hilit-chg
-(use-package hilit-chg
-  :diminish highlight-changes-mode)
-
 ;; ws-butler
 (use-package ws-butler
   :ensure t
