@@ -98,7 +98,7 @@
 
 ;; making buffer names unique
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-buffer-name-style 'forward)
 
 ;; use trash
 (setq delete-by-moving-to-trash t)
