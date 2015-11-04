@@ -167,7 +167,8 @@
     (ido-everywhere 1)
     (flx-ido-mode 1)
     (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)))
+    (setq ido-use-faces nil)
+    (defalias 'ido-complete-space 'self-insert-command)))
 
 ;; ido-ubiquitous
 (use-package ido-ubiquitous
