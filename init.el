@@ -116,16 +116,10 @@
       (set-frame-font "Input Mono Compressed 13")
       (setq mac-option-modifier 'meta)))
 
-;; smartparens
-(use-package smartparens
-  :ensure t
-  :diminish smartparens-mode
+;; electric-pair-mode
+(use-package electric-pair-mode
   :config
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode t)
-    (setq sp-autoescape-string-quote nil)
-    (show-smartparens-global-mode 1)))
+  (electric-pair-mode 1))
 
 ;; magit
 (use-package magit
