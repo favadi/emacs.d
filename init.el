@@ -64,18 +64,18 @@
 (setq tab-stop-list (number-sequence 4 200 4))
 
 ;; use C-h as backspace
-(global-set-key (kbd "C-h") 'delete-backward-char)
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
+(bind-key* "C-h" 'delete-backward-char)
+(bind-key* "C-M-h" 'backward-kill-word)
 
 ;; rebinding mark-defun
-(global-set-key (kbd "C-c h") 'mark-defun)
+(bind-key "C-c h" 'mark-defun)
 
 ;; enable case conversion
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
 ;; use ibuffer instead of buffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(bind-key "C-x C-b" 'ibuffer)
 
 ;; store all backup and autosave files in the tmp dir
 (setq backup-directory-alist
@@ -88,10 +88,6 @@
 
 ;; use extra dired features
 (require 'dired-x)
-
-;; disable C-z
-(global-set-key (kbd "C-z") nil)
-(global-set-key (kbd "C-x C-z") nil)
 
 ;; undo/redo window configuration
 (winner-mode 1)
@@ -239,9 +235,7 @@
     (add-hook 'rst-mode-hook
               (lambda()
                 (setq-local fill-column 80)
-                (turn-on-auto-fill)
-                (local-set-key (kbd "C-M-h") 'backward-kill-word)
-                (local-set-key (kbd "C-c h") 'rst-mark-section)))))
+                (turn-on-auto-fill)))))
 
 ;; web-mode
 (use-package web-mode
@@ -259,10 +253,9 @@
 (use-package whole-line-or-region
   :ensure t
   :diminish whole-line-or-region-mode
-  :init
-  (bind-key "M-;" 'whole-line-or-region-comment-dwim-2)
   :config
   (progn
+    (bind-key "M-;" 'whole-line-or-region-comment-dwim-2)
     (whole-line-or-region-mode 1)))
 
 ;; hilit-chg
@@ -343,10 +336,11 @@
 ;; expand-region
 (use-package expand-region
   :ensure t
-  :bind ("C-=" . er/expand-region))
+  :config
+  (bind-key* "C-=" 'er/expand-region))
 
 ;; help key binding
-(global-set-key (kbd "C-z") 'help-command)
+(bind-key "C-z" 'help-command)
 
 ;; dockerfile-mode
 (use-package dockerfile-mode
