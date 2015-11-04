@@ -113,9 +113,8 @@
       (setq mac-option-modifier 'meta)))
 
 ;; electric-pair-mode
-(use-package electric-pair-mode
-  :config
-  (electric-pair-mode 1))
+(electric-pair-mode 1)
+(show-paren-mode 1)
 
 ;; magit
 (use-package magit
