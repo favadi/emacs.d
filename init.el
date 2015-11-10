@@ -115,6 +115,10 @@
 (electric-pair-mode 1)
 (show-paren-mode 1)
 
+;; to suppress -Chg in mode line
+(use-package hilit-chg
+  :diminish highlight-changes-mode)
+
 ;; magit
 (use-package magit
   :ensure t
