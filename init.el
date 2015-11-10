@@ -13,17 +13,6 @@
 (require 'diminish)
 (require 'bind-key)
 
-;; exec-path-from-shell
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "GOPATH")
-    (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
-    (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
-    ))
-
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode 0))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -109,6 +98,16 @@
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
     (progn
+      (use-package exec-path-from-shell
+        :ensure t
+        :config
+        (when (memq window-system '(mac ns))
+          (exec-path-from-shell-initialize)
+          (exec-path-from-shell-copy-env "GOPATH")
+          (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
+          (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
+          ;; use bash installed from brew
+          (setq explicit-shell-file-name "/usr/local/bin/bash")))
       (set-frame-font "Input Mono Compressed 13")
       (setq mac-option-modifier 'meta)))
 
