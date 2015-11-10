@@ -13,17 +13,6 @@
 (require 'diminish)
 (require 'bind-key)
 
-;; exec-path-from-shell
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "GOPATH")
-    (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
-    (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
-    ))
-
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode 0))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -64,8 +53,8 @@
 (setq tab-stop-list (number-sequence 4 200 4))
 
 ;; use C-h as backspace
-(bind-key* "C-h" 'delete-backward-char)
-(bind-key* "C-M-h" 'backward-kill-word)
+(bind-key "C-h" 'delete-backward-char)
+(bind-key "C-M-h" 'backward-kill-word)
 
 ;; rebinding mark-defun
 (bind-key "C-c h" 'mark-defun)
@@ -109,6 +98,16 @@
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
     (progn
+      (use-package exec-path-from-shell
+        :ensure t
+        :config
+        (when (memq window-system '(mac ns))
+          (exec-path-from-shell-initialize)
+          (exec-path-from-shell-copy-env "GOPATH")
+          (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
+          (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
+          ;; use bash installed from brew
+          (setq explicit-shell-file-name "/usr/local/bin/bash")))
       (set-frame-font "Input Mono Compressed 13")
       (setq mac-option-modifier 'meta)))
 
@@ -233,7 +232,8 @@
   :config
   (progn
     (add-hook 'rst-mode-hook
-              (lambda()
+              (lambda ()
+                (local-set-key (kbd "C-M-h") 'backward-kill-word)
                 (setq-local fill-column 80)
                 (turn-on-auto-fill)))))
 
@@ -342,4 +342,4 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
-(require 'jinja2-mode)
+(use-package jinja2-mode)
