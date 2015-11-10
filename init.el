@@ -342,4 +342,4 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
-(require 'jinja2-mode)
+(use-package jinja2-mode)
