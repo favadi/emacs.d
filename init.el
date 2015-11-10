@@ -53,8 +53,8 @@
 (setq tab-stop-list (number-sequence 4 200 4))
 
 ;; use C-h as backspace
-(bind-key* "C-h" 'delete-backward-char)
-(bind-key* "C-M-h" 'backward-kill-word)
+(bind-key "C-h" 'delete-backward-char)
+(bind-key "C-M-h" 'backward-kill-word)
 
 ;; rebinding mark-defun
 (bind-key "C-c h" 'mark-defun)
@@ -232,7 +232,8 @@
   :config
   (progn
     (add-hook 'rst-mode-hook
-              (lambda()
+              (lambda ()
+                (local-set-key (kbd "C-M-h") 'backward-kill-word)
                 (setq-local fill-column 80)
                 (turn-on-auto-fill)))))
 
