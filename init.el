@@ -255,8 +255,12 @@
   :diminish whole-line-or-region-mode
   :config
   (progn
-    (bind-key "M-;" 'whole-line-or-region-comment-dwim-2)
     (whole-line-or-region-mode 1)))
+
+;; comment-dwim-2
+(use-package comment-dwim-2
+  :ensure t
+  :bind ("M-;" . comment-dwim-2))
 
 ;; ws-butler
 (use-package ws-butler
