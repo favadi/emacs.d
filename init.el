@@ -189,13 +189,6 @@
   (progn
     (smex-initialize)))
 
-;; ido-yes-or-no
-(use-package ido-yes-or-no
-  :ensure t
-  :config
-  (progn
-    (ido-yes-or-no-mode 1)))
-
 ;; ido-vertical-mode
 (use-package ido-vertical-mode
   :ensure t
