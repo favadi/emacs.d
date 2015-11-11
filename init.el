@@ -21,6 +21,9 @@
 ;; disable startup message
 (setq inhibit-startup-message t)
 
+;; getting rid of the "yes or no" prompt and replace it with "y or n"
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; disable confirmation if a file or buffer does not exist when you
 ;; use C-x C-f or C-x b
 (setq confirm-nonexistent-file-or-buffer nil)
