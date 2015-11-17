@@ -136,7 +136,11 @@
 
 ;; ag.el
 (use-package ag
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    (add-hook 'ag-mode-hook 'toggle-truncate-lines)
+    (setq ag-highlight-search t)))
 
 ;; projectile
 (use-package projectile

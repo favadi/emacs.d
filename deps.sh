@@ -17,3 +17,5 @@ go get -v -u github.com/kisielk/errcheck
 # python
 brew install python
 pip install --upgrade pip setuptools flake8 pylint virtualenvwrapper
+
+brew install the_silver_searcher
