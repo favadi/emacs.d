@@ -162,11 +162,7 @@
 
 ;; persp-projectile
 (use-package persp-projectile
-  :ensure t
-  :config
-  (progn
-    (define-key projectile-mode-map (kbd "C-c p q")
-      'projectile-persp-switch-project)))
+  :ensure t)
 
 ;; flx-ido
 (use-package flx-ido
