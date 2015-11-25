@@ -294,7 +294,8 @@
     (defun my/python-mode-hook ()
       (add-to-list 'company-backends 'company-jedi))
     (add-hook 'python-mode-hook 'my/python-mode-hook)
-    (add-to-list 'company-backends 'company-go)))
+    (add-to-list 'company-backends 'company-go)
+    (setq company-dabbrev-downcase nil)))
 
 ;; avy
 (use-package avy
