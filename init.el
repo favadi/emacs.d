@@ -310,6 +310,14 @@
   :bind
   (("C-x o" . ace-window)))
 
+(use-package flycheck-gometalinter
+  :ensure t
+  :config
+  (progn
+    (flycheck-gometalinter-setup)
+    (setq flycheck-gometalinter-vendor t)
+    (setq flycheck-gometalinter-disable-linters '("gotype"))))
+
 ;; flycheck
 (use-package flycheck
   :ensure t
