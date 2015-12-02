@@ -310,6 +310,9 @@
   :bind
   (("C-x o" . ace-window)))
 
+(use-package flycheck-package
+  :ensure t)
+
 (use-package flycheck-gometalinter
   :ensure t
   :config
