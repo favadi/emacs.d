@@ -360,3 +360,4 @@
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode)
+(use-package go-rename)

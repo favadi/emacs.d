@@ -8,12 +8,13 @@ brew install shellcheck
 
 # golang
 brew install go
-go get -u github.com/dougm/goflymake
-go get -u github.com/golang/lint/golint
-go get -u github.com/kisielk/errcheck
-go get -u github.com/nsf/gocode
-go get -u github.com/rogpeppe/godef
-go get -u golang.org/x/tools/cmd/goimports
+go get -u github.com/dougm/goflymake \
+   github.com/golang/lint/golint \
+   github.com/kisielk/errcheck \
+   github.com/nsf/gocode \
+   github.com/rogpeppe/godef \
+   golang.org/x/tools/cmd/goimports \
+   golang.org/x/tools/cmd/gorename
 
 # python
 brew install python
