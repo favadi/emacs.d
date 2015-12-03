@@ -21,6 +21,9 @@
 ;; disable startup message
 (setq inhibit-startup-message t)
 
+;; disable beep sound
+(setq ring-bell-function 'ignore)
+
 ;; getting rid of the "yes or no" prompt and replace it with "y or n"
 (defalias 'yes-or-no-p 'y-or-n-p)
 
