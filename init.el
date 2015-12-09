@@ -146,6 +146,7 @@
   :ensure t
   :bind (("\C-s" . swiper)
          ("C-c C-r" . ivy-resume))
+  :diminish ivy-mode
   :init (ivy-mode 1)
   :config
   (progn
