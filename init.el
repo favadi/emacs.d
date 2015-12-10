@@ -308,10 +308,9 @@
   (("C-c SPC" . avy-goto-word-1)))
 
 ;; ace-window
-(use-package ace-window
+(use-package switch-window
   :ensure t
-  :bind
-  (("C-x o" . ace-window)))
+  :bind ("C-x o" . switch-window))
 
 (use-package flycheck-package
   :ensure t)
