@@ -99,6 +99,9 @@
   :ensure t
   :config
   (progn
+    (setq solarized-distinct-fringe-background t)
+    (setq solarized-use-variable-pitch nil)
+    (setq solarized-high-contrast-mode-line t)
     (load-theme 'solarized-light t)))
 
 ;; Mac OSX specific settings
