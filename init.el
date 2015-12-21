@@ -95,7 +95,7 @@
 (setq delete-by-moving-to-trash t)
 
 ;; change custom file location
-(setq custom-file (concat default-directory "custom.el"))
+(setq custom-file (concat user-emacs-directory "custom.el"))
 
 ;; solarized-theme
 (use-package solarized-theme
