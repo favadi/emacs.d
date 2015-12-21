@@ -117,10 +117,11 @@
           (exec-path-from-shell-initialize)
           (exec-path-from-shell-copy-env "GOPATH")
           (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
-          (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
-          ;; use bash installed from brew
-          (setq explicit-shell-file-name "/usr/local/bin/bash")))
+          (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")))
+      ;; use bash installed from brew
+      (setq explicit-shell-file-name "/usr/local/bin/bash")
       (set-frame-font "Input Mono Compressed 13" t t)
+      ;; only for railwaycat emacs
       (setq mac-option-modifier 'meta)))
 
 ;; electric-pair-mode
