@@ -94,9 +94,6 @@
 ;; use trash
 (setq delete-by-moving-to-trash t)
 
-;; change custom file location
-(setq custom-file (concat user-emacs-directory "custom.el"))
-
 ;; solarized-theme
 (use-package solarized-theme
   :ensure t
@@ -370,3 +367,8 @@
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode)
 (use-package go-rename)
+
+;; change custom file location
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
