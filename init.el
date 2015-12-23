@@ -157,7 +157,8 @@
     (projectile-global-mode)
     (setq projectile-mode-line
           '(:eval (format " [%s]" (projectile-project-name))))
-    (setq projectile-remember-window-configs t)))
+    (setq projectile-remember-window-configs t)
+    (setq projectile-switch-project-action 'projectile-dired)))
 
 ;; perspective-el
 (use-package perspective
@@ -165,6 +166,7 @@
   :config
   (progn
     (setq persp-show-modestring nil)
+    (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
     (persp-mode)))
 
 ;; persp-projectile
