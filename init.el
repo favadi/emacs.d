@@ -117,7 +117,7 @@
           (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/usr/local/bin/bash")
-      (set-frame-font "Input Mono Compressed 13" t t)
+      (set-frame-font "PragmataPro Mono 12" t t)
       ;; only for railwaycat emacs
       (setq mac-option-modifier 'meta)))
 
