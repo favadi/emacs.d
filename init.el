@@ -226,9 +226,7 @@
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (add-hook 'go-mode-hook (lambda ()
-                          (local-set-key (kbd "M-.") #'godef-jump)
-                          (local-set-key (kbd "C-c C-k") 'godoc-at-point)
-                          (local-set-key (kbd "C-u C-c C-k") 'godoc)))))
+                          (local-set-key (kbd "C-c C-k") 'godoc-at-point)))))
 
 ;; go-eldoc
 (use-package go-eldoc
