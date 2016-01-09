@@ -350,6 +350,16 @@
   :config
   (bind-key* "C-=" 'er/expand-region))
 
+;; yasnippet
+(use-package yasnippet
+  :ensure t
+  :config
+  (progn
+    (add-to-list 'yas-snippet-dirs (expand-file-name
+                                    "yasnippet-snippets" user-emacs-directory))
+    (yas-reload-all)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)))
+
 ;; help key binding
 (bind-key "C-z" 'help-command)
 
