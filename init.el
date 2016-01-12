@@ -353,6 +353,7 @@
 ;; yasnippet
 (use-package yasnippet
   :ensure t
+  :diminish yas-minor-mode
   :config
   (progn
     (add-to-list 'yas-snippet-dirs (expand-file-name
