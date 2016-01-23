@@ -169,10 +169,6 @@
     (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
     (persp-mode)))
 
-;; persp-projectile
-(use-package persp-projectile
-  :ensure t)
-
 ;; flx-ido
 (use-package flx-ido
   :ensure t
@@ -380,6 +376,7 @@
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode)
 (use-package go-rename)
+(use-package persp-projectile)
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
