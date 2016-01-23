@@ -325,7 +325,9 @@
   (progn
     (flycheck-gometalinter-setup)
     (setq flycheck-gometalinter-vendor t)
-    (setq flycheck-gometalinter-disable-linters '("gotype"))))
+    (setq flycheck-gometalinter-disable-linters
+          '("structcheck" "varcheck" "errcheck" "aligncheck" "testify"
+            "test" "interfacer" "gotype"))))
 
 ;; flycheck
 (use-package flycheck
