@@ -94,6 +94,16 @@
 ;; use trash
 (setq delete-by-moving-to-trash t)
 
+;; disable garbage collection when minibuffer is active
+(defun my-minibuffer-setup-hook ()
+  (setq gc-cons-threshold most-positive-fixnum))
+
+(defun my-minibuffer-exit-hook ()
+  (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+
 ;; solarized-theme
 (use-package solarized-theme
   :ensure t
