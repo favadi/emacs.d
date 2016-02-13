@@ -149,7 +149,11 @@
 
 ;; gitignore-mode
 (use-package gitignore-mode
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    (add-hook 'gitignore-mode-hook (lambda ()
+                                (setq require-final-newline t)))))
 
 ;; ag.el
 (use-package ag
