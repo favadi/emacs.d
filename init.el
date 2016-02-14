@@ -129,7 +129,9 @@
       (setq explicit-shell-file-name "/usr/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
       ;; only for railwaycat emacs
-      (setq mac-option-modifier 'meta)))
+      (setq mac-option-modifier 'meta)
+      ;; OS X ls doesn't support --dired
+      (setq dired-use-ls-dired nil)))
 
 ;; electric-pair-mode
 (electric-pair-mode 1)
