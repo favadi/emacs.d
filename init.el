@@ -257,6 +257,15 @@
                 (setq-local fill-column 80)
                 (turn-on-auto-fill)))))
 
+;; cc-mode
+(use-package cc-mode
+  :config
+  (progn
+    (add-hook 'c-mode-hook
+              (lambda ()
+                (local-set-key (kbd "C-M-h") 'backward-kill-word)
+                (local-set-key (kbd "C-c h") 'c-mark-function)))))
+
 ;; web-mode
 (use-package web-mode
   :ensure t
