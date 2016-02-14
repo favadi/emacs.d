@@ -142,16 +142,16 @@
 (use-package hilit-chg
   :diminish highlight-changes-mode)
 
+;; swiper
 (use-package swiper
   :ensure t
   :bind (("\C-s" . swiper)
+         ("\C-r" . swiper)
          ("C-c C-r" . ivy-resume))
   :diminish ivy-mode
-  :init (ivy-mode 1)
-  :config
-  (progn
-    (setq ivy-use-virtual-buffers t)))
+  :init (ivy-mode 1))
 
+;; counsel
 (use-package counsel
   :ensure t
   :bind (("M-x" . counsel-M-x)
