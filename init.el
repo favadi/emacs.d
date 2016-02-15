@@ -13,6 +13,9 @@
 (require 'diminish)
 (require 'bind-key)
 
+;; help key binding
+(bind-key "C-z" 'help-command)
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (when (fboundp 'menu-bar-mode) (menu-bar-mode 0))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
@@ -141,13 +144,32 @@
 (use-package hilit-chg
   :diminish highlight-changes-mode)
 
+;; swiper
+(use-package swiper
+  :ensure t
+  :bind (("\C-s" . swiper)
+         ("\C-r" . swiper)
+         ("C-c C-r" . ivy-resume))
+  :diminish ivy-mode
+  :init (ivy-mode 1))
+
+;; counsel
+(use-package counsel
+  :ensure t
+  :bind (("M-x" . counsel-M-x)
+         ("M-y" . counsel-yank-pop)
+         ("C-x C-f" . counsel-find-file)
+         ("C-z f" . counsel-describe-function)
+         ("C-z v" . counsel-describe-variable)
+         ("C-c k" . counsel-ag)))
+
 ;; magit
 (use-package magit
   :ensure t
   :config
   (progn
     (setq magit-last-seen-setup-instructions "1.4.0")
-    (setq magit-completing-read-function 'magit-ido-completing-read)))
+    (setq magit-completing-read-function 'ivy-completing-read)))
 
 ;; gitignore-mode
 (use-package gitignore-mode
@@ -174,7 +196,8 @@
     (setq projectile-mode-line
           '(:eval (format " [%s]" (projectile-project-name))))
     (setq projectile-remember-window-configs t)
-    (setq projectile-switch-project-action 'projectile-dired)))
+    (setq projectile-switch-project-action 'projectile-dired))
+    (setq projectile-completion-system 'ivy))
 
 ;; perspective-el
 (use-package perspective
@@ -185,43 +208,6 @@
     (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
     (persp-mode)))
 
-;; flx-ido
-(use-package flx-ido
-  :ensure t
-  :config
-  (progn
-    (ido-mode 1)
-    (ido-everywhere 1)
-    (flx-ido-mode 1)
-    (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)
-    (defalias 'ido-complete-space 'self-insert-command)))
-
-;; ido-ubiquitous
-(use-package ido-ubiquitous
-  :ensure t
-  :config
-  (progn
-    (ido-ubiquitous-mode 1)))
-
-;; smex
-(use-package smex
-  :ensure t
-  :bind
-  (("M-x" . smex))
-  :config
-  (progn
-    (smex-initialize)))
-
-;; ido-vertical-mode
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  (progn
-    (ido-vertical-mode 1)
-    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
-
-;; yaml-mode
 (use-package yaml-mode
   :ensure t
   :mode "\\.sls$"
