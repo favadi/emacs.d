@@ -163,7 +163,8 @@
   :config
   (progn
     (add-hook 'ag-mode-hook 'toggle-truncate-lines)
-    (setq ag-highlight-search t)))
+    (setq ag-highlight-search t)
+    (setq ag-reuse-buffers 't)))
 
 ;; projectile
 (use-package projectile
