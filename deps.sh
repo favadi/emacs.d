@@ -15,7 +15,8 @@ go get -u \
    github.com/rogpeppe/godef \
    golang.org/x/tools/cmd/goimports \
    golang.org/x/tools/cmd/gorename \
-   golang.org/x/tools/cmd/gomvpkg
+   golang.org/x/tools/cmd/gomvpkg \
+   github.com/jstemmer/gotags
 
 gometalinter --install --update
 
