@@ -141,6 +141,19 @@
 (use-package hilit-chg
   :diminish highlight-changes-mode)
 
+;; keyfreq
+(use-package keyfreq
+  :ensure t
+  :config
+  (progn
+    (setq keyfreq-excluded-commands
+          '(self-insert-command
+            abort-recursive-edit
+            previous-line
+            next-line))
+    (keyfreq-mode 1)
+    (keyfreq-autosave-mode 1)))
+
 ;; magit
 (use-package magit
   :ensure t
