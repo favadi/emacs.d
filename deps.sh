@@ -16,6 +16,7 @@ go get -u \
    golang.org/x/tools/cmd/goimports \
    golang.org/x/tools/cmd/gorename \
    golang.org/x/tools/cmd/gomvpkg \
+   golang.org/x/tools/cmd/guru \
    github.com/jstemmer/gotags
 
 gometalinter --install --update

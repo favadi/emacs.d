@@ -416,11 +416,19 @@
   :ensure t)
 
 ;; install packages not available in melpa stable
-(add-to-list 'load-path "~/.emacs.d/vendor/")
+(add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
+(add-to-list 'load-path
+             (expand-file-name "go/src/golang.org/x/tools/refactor/rename"
+                               user-emacs-directory))
+(add-to-list 'load-path
+             (expand-file-name "go/src/golang.org/x/tools/cmd/guru"
+                               user-emacs-directory))
+
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode)
 (use-package go-rename)
+(use-package go-guru)
 (use-package persp-projectile)
 
 ;; change custom file location
