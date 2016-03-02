@@ -365,10 +365,9 @@
   :config
   (progn
     (flycheck-gometalinter-setup)
-    (setq flycheck-gometalinter-vendor t)
+    (setq flycheck-gometalinter-fast t)
     (setq flycheck-gometalinter-disable-linters
-          '("structcheck" "varcheck" "errcheck" "aligncheck" "testify"
-            "test" "interfacer" "gotype"))))
+          '("gotype"))))
 
 ;; flycheck
 (use-package flycheck
