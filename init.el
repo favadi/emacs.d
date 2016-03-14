@@ -282,7 +282,7 @@
 (use-package cc-mode
   :config
   (progn
-    (add-hook 'c-mode-hook
+    (add-hook 'c-mode-common-hook
               (lambda ()
                 (local-set-key (kbd "C-M-h") 'backward-kill-word)
                 (local-set-key (kbd "C-c h") 'c-mark-function)))))
