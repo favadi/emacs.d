@@ -415,6 +415,10 @@
 (use-package elixir-mode
   :ensure t)
 
+;; protobuf
+(use-package protobuf-mode
+  :ensure t)
+
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
 (add-to-list 'load-path
