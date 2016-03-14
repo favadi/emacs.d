@@ -252,6 +252,7 @@
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (add-hook 'go-mode-hook (lambda ()
+                              (subword-mode)
                               (local-set-key (kbd "C-c C-k") 'godoc-at-point)))))
 
 ;; go-direx
