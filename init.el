@@ -104,6 +104,9 @@
 (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
 (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 
+;; confirm to quit
+(setq confirm-kill-emacs #'y-or-n-p)
+
 ;; solarized-theme
 (use-package solarized-theme
   :ensure t
