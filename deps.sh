@@ -27,6 +27,8 @@ pip install --upgrade pip setuptools flake8 pylint virtualenvwrapper
 
 brew install the_silver_searcher
 
+brew install direnv
+
 snippet_dir=~/.emacs.d/yasnippet-snippets
 if [[ -d "$snippet_dir" ]]; then
     pushd "$snippet_dir"
