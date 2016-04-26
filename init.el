@@ -111,6 +111,9 @@
   "Kill up to, but not including ARGth occurrence of CHAR.")
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 
+;; toggle fullscreen
+(global-set-key (kbd "C-c C-f") 'toggle-frame-fullscreen)
+
 ;; solarized-theme
 (use-package solarized-theme
   :ensure t
