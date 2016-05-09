@@ -19,6 +19,8 @@ go get -u \
    golang.org/x/tools/cmd/guru \
    github.com/jstemmer/gotags
 
+gocode set autobuild true
+
 gometalinter --install --update
 
 # python

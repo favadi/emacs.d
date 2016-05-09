@@ -132,9 +132,7 @@
         :config
         (when (memq window-system '(mac ns))
           (exec-path-from-shell-initialize)
-          (exec-path-from-shell-copy-env "GOPATH")
-          (exec-path-from-shell-copy-env "HOMEBREW_GITHUB_API_TOKEN")
-          (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")))
+          (exec-path-from-shell-copy-env "GOPATH")))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/usr/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
@@ -259,7 +257,7 @@
   :ensure t
   :config
   (progn
-    (setq gofmt-command "goimports")
+    ;; (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (add-hook 'go-mode-hook (lambda ()
                               (subword-mode)
