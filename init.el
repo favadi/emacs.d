@@ -444,9 +444,6 @@
 (use-package go-rename)
 (use-package go-guru)
 (use-package persp-projectile)
-(use-package projectile-direnv
-  :config
-  (add-hook 'projectile-mode-hook 'projectile-direnv-export-variables))
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
