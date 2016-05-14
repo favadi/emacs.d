@@ -54,9 +54,9 @@
                  "%b"))))
 
 ;; change indentation
-(setq-default tab-width 4)
+(setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
-(setq tab-stop-list (number-sequence 4 200 4))
+(setq tab-stop-list (number-sequence 8 200 8))
 
 ;; use C-h as backspace
 (bind-key "C-h" 'delete-backward-char)
@@ -112,7 +112,7 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 
 ;; toggle fullscreen
-(global-set-key (kbd "C-c C-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-c C-c C-f") 'toggle-frame-fullscreen)
 
 ;; solarized-theme
 (use-package solarized-theme
