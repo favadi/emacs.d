@@ -114,6 +114,9 @@
 ;; toggle fullscreen
 (global-set-key (kbd "C-c C-c C-f") 'toggle-frame-fullscreen)
 
+;; help key binding
+(bind-key "C-z" 'help-command)
+
 ;; solarized-theme
 (use-package solarized-theme
   :ensure t
@@ -168,7 +171,7 @@
   :config
   (progn
     (setq magit-last-seen-setup-instructions "1.4.0")
-    (setq magit-completing-read-function 'magit-ido-completing-read)))
+    (setq magit-completing-read-function 'ivy-completing-read)))
 
 ;; gitignore-mode
 (use-package gitignore-mode
@@ -196,6 +199,7 @@
     (setq projectile-mode-line
           '(:eval (format " [%s]" (projectile-project-name))))
     (setq projectile-remember-window-configs t)
+    (setq projectile-completion-system 'ivy)
     (setq projectile-switch-project-action 'projectile-dired)))
 
 ;; perspective-el
@@ -207,41 +211,28 @@
     (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
     (persp-mode)))
 
-;; flx-ido
-(use-package flx-ido
+;; ivy
+(use-package ivy
   :ensure t
+  :diminish ivy-mode
+  :bind
+  ("C-c C-r" . ivy-resume)
   :config
   (progn
-    (ido-mode 1)
-    (ido-everywhere 1)
-    (flx-ido-mode 1)
-    (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)
-    (defalias 'ido-complete-space 'self-insert-command)))
+    (ivy-mode 1)))
 
-;; ido-ubiquitous
-(use-package ido-ubiquitous
-  :ensure t
-  :config
-  (progn
-    (ido-ubiquitous-mode 1)))
+;; swiper
+;; (use-package swiper
+;;   :ensure t)
 
-;; smex
-(use-package smex
+;; counsel
+(use-package counsel
   :ensure t
   :bind
-  (("M-x" . smex))
-  :config
-  (progn
-    (smex-initialize)))
-
-;; ido-vertical-mode
-(use-package ido-vertical-mode
-  :ensure t
-  :config
-  (progn
-    (ido-vertical-mode 1)
-    (setq ido-vertical-define-keys 'C-n-and-C-p-only)))
+  ("M-x" . counsel-M-x)
+  ("C-z f" . counsel-describe-function)
+  ("C-z v" . counsel-describe-variable)
+  ("C-c k" . counsel-ag))
 
 ;; yaml-mode
 (use-package yaml-mode
@@ -412,9 +403,6 @@
                                     "yasnippet-snippets" user-emacs-directory))
     (yas-reload-all)
     (add-hook 'prog-mode-hook #'yas-minor-mode)))
-
-;; help key binding
-(bind-key "C-z" 'help-command)
 
 ;; dockerfile-mode
 (use-package dockerfile-mode
