@@ -258,6 +258,7 @@
   :config
   (progn
     ;; (setq gofmt-command "goimports")
+    (setq gofmt-args '("-s"))
     (add-hook 'before-save-hook #'gofmt-before-save)
     (add-hook 'go-mode-hook (lambda ()
                               (subword-mode)
