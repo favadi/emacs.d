@@ -380,7 +380,8 @@
     (add-hook 'go-mode-hook 'flycheck-mode)
     (add-hook 'lua-mode-hook 'flycheck-mode)
     (add-hook 'sh-mode-hook 'flycheck-mode)
-    (add-hook 'rst-mode-hook 'flycheck-mode)))
+    (add-hook 'rst-mode-hook 'flycheck-mode)
+    (add-hook 'js-mode-hook 'flycheck-mode)))
 
 ;; markdown-mode
 (use-package markdown-mode
@@ -415,6 +416,24 @@
 ;; protobuf
 (use-package protobuf-mode
   :ensure t)
+
+;; tern
+(add-to-list 'load-path "/usr/local/lib/node_modules/tern/emacs")
+(use-package tern)
+
+;; js-mode
+(use-package js
+  :config
+  (progn
+    (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+    (setq js-indent-level 2)))
+
+;; company-tern
+(use-package company-tern
+  :ensure t
+  :config
+  (progn
+    (add-to-list 'company-backends 'company-tern)))
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))

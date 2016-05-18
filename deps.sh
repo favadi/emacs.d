@@ -31,6 +31,11 @@ brew install the_silver_searcher
 
 brew install direnv
 
+# js
+brew install npm
+npm install standard -g
+npm install tern -g
+
 snippet_dir=~/.emacs.d/yasnippet-snippets
 if [[ -d "$snippet_dir" ]]; then
     pushd "$snippet_dir"
