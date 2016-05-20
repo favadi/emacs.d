@@ -4,11 +4,11 @@
 set -eux
 
 # shell script
-brew install shellcheck
+sudo port install shellcheck
 
 # golang
-brew install go
-export GOPATH=$HOME/.emacs.d/go
+sudo port install go
+export GOPATH=$HOME/go-dev-tools
 go get -u \
    github.com/alecthomas/gometalinter \
    github.com/nsf/gocode \
@@ -24,17 +24,18 @@ gocode set autobuild true
 gometalinter --install --update
 
 # python
-brew install python
-pip install --upgrade pip setuptools flake8 pylint virtualenvwrapper
+sudo port install python27
+sudo port select --set python python27
+sudo port install py-flake8 py-pylint
+sudo port select --set flake8 flake8-27
+sudo port select --set pylint pylint27
 
-brew install the_silver_searcher
-
-brew install direnv
+sudo port install the_silver_searcher
 
 # js
-brew install npm
-npm install standard -g
-npm install tern -g
+sudo port install npm
+# npm install standard -g
+# npm install tern -g
 
 snippet_dir=~/.emacs.d/yasnippet-snippets
 if [[ -d "$snippet_dir" ]]; then

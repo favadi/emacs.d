@@ -137,7 +137,7 @@
           (exec-path-from-shell-initialize)
           (exec-path-from-shell-copy-env "GOPATH")))
       ;; use bash installed from brew
-      (setq explicit-shell-file-name "/usr/local/bin/bash")
+      (setq explicit-shell-file-name "/opt/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
       ;; only for railwaycat emacs
       (setq mac-option-modifier 'meta)
@@ -438,11 +438,9 @@
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
 (add-to-list 'load-path
-             (expand-file-name "go/src/golang.org/x/tools/refactor/rename"
-                               user-emacs-directory))
+             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/refactor/rename"))
 (add-to-list 'load-path
-             (expand-file-name "go/src/golang.org/x/tools/cmd/guru"
-                               user-emacs-directory))
+             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/cmd/guru"))
 
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
