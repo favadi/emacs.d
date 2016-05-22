@@ -34,8 +34,8 @@ sudo port install the_silver_searcher
 
 # js
 sudo port install npm
-# npm install standard -g
-# npm install tern -g
+npm install standard -g
+npm install tern -g
 
 snippet_dir=~/.emacs.d/yasnippet-snippets
 if [[ -d "$snippet_dir" ]]; then

@@ -418,7 +418,7 @@
   :ensure t)
 
 ;; tern
-(add-to-list 'load-path "/usr/local/lib/node_modules/tern/emacs")
+(add-to-list 'load-path (expand-file-name "~/.npm-packages/lib/node_modules/tern/emacs/"))
 (use-package tern)
 
 ;; js-mode
