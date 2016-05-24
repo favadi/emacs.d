@@ -137,7 +137,7 @@
           (exec-path-from-shell-initialize)
           (exec-path-from-shell-copy-env "GOPATH")))
       ;; use bash installed from brew
-      (setq explicit-shell-file-name "/usr/local/bin/bash")
+      (setq explicit-shell-file-name "/opt/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
       ;; only for railwaycat emacs
       (setq mac-option-modifier 'meta)
@@ -380,7 +380,8 @@
     (add-hook 'go-mode-hook 'flycheck-mode)
     (add-hook 'lua-mode-hook 'flycheck-mode)
     (add-hook 'sh-mode-hook 'flycheck-mode)
-    (add-hook 'rst-mode-hook 'flycheck-mode)))
+    (add-hook 'rst-mode-hook 'flycheck-mode)
+    (add-hook 'js-mode-hook 'flycheck-mode)))
 
 ;; markdown-mode
 (use-package markdown-mode
@@ -416,14 +417,30 @@
 (use-package protobuf-mode
   :ensure t)
 
+;; tern
+(add-to-list 'load-path (expand-file-name "~/.npm-packages/lib/node_modules/tern/emacs/"))
+(use-package tern)
+
+;; js-mode
+(use-package js
+  :config
+  (progn
+    (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+    (setq js-indent-level 2)))
+
+;; company-tern
+(use-package company-tern
+  :ensure t
+  :config
+  (progn
+    (add-to-list 'company-backends 'company-tern)))
+
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
 (add-to-list 'load-path
-             (expand-file-name "go/src/golang.org/x/tools/refactor/rename"
-                               user-emacs-directory))
+             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/refactor/rename"))
 (add-to-list 'load-path
-             (expand-file-name "go/src/golang.org/x/tools/cmd/guru"
-                               user-emacs-directory))
+             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/cmd/guru"))
 
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
