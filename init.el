@@ -248,8 +248,7 @@
   :ensure t
   :config
   (progn
-    ;; (setq gofmt-command "goimports")
-    (setq gofmt-args '("-s"))
+    (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (add-hook 'go-mode-hook (lambda ()
                               (subword-mode)
