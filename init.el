@@ -138,7 +138,7 @@
           (exec-path-from-shell-copy-env "GOPATH")))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "PragmataPro Mono 12" t t)
+      (set-frame-font "Iosevka 12" t t)
       ;; only for railwaycat emacs
       (setq mac-option-modifier 'meta)
       ;; OS X ls doesn't support --dired
