@@ -107,6 +107,10 @@
 ;; confirm to quit
 (setq confirm-kill-emacs #'y-or-n-p)
 
+;; When saving a file that starts with `#!', make it executable.
+(add-hook 'after-save-hook
+            'executable-make-buffer-file-executable-if-script-p)
+
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR.")
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
