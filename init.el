@@ -113,7 +113,7 @@
 
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR.")
-(global-set-key (kbd "M-Z") 'zap-up-to-char)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
 
 ;; toggle fullscreen
 (global-set-key (kbd "C-c C-c C-f") 'toggle-frame-fullscreen)
