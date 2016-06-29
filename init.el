@@ -138,8 +138,7 @@
         :ensure t
         :config
         (when (memq window-system '(mac ns))
-          (exec-path-from-shell-initialize)
-          (exec-path-from-shell-copy-env "GOPATH")))
+          (exec-path-from-shell-initialize)))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/opt/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
