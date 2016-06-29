@@ -156,19 +156,6 @@
 (use-package hilit-chg
   :diminish highlight-changes-mode)
 
-;; keyfreq
-(use-package keyfreq
-  :ensure t
-  :config
-  (progn
-    (setq keyfreq-excluded-commands
-          '(self-insert-command
-            abort-recursive-edit
-            previous-line
-            next-line))
-    (keyfreq-mode 1)
-    (keyfreq-autosave-mode 1)))
-
 ;; magit
 (use-package magit
   :ensure t
@@ -381,7 +368,6 @@
     (setq flycheck-check-syntax-automatically '(mode-enabled save))
     (add-hook 'python-mode-hook 'flycheck-mode)
     (add-hook 'go-mode-hook 'flycheck-mode)
-    (add-hook 'lua-mode-hook 'flycheck-mode)
     (add-hook 'sh-mode-hook 'flycheck-mode)
     (add-hook 'rst-mode-hook 'flycheck-mode)
     (add-hook 'js-mode-hook 'flycheck-mode)))
@@ -420,23 +406,11 @@
 (use-package protobuf-mode
   :ensure t)
 
-;; tern
-(add-to-list 'load-path (expand-file-name "~/.npm-packages/lib/node_modules/tern/emacs/"))
-(use-package tern)
-
 ;; js-mode
 (use-package js
   :config
   (progn
-    (add-hook 'js-mode-hook (lambda () (tern-mode t)))
     (setq js-indent-level 2)))
-
-;; company-tern
-(use-package company-tern
-  :ensure t
-  :config
-  (progn
-    (add-to-list 'company-backends 'company-tern)))
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
