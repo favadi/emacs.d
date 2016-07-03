@@ -159,7 +159,6 @@
   :ensure t
   :config
   (progn
-    (setq magit-last-seen-setup-instructions "1.4.0")
     (setq magit-completing-read-function 'ivy-completing-read)))
 
 ;; gitignore-mode
