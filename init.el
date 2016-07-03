@@ -125,11 +125,10 @@
 (use-package solarized-theme
   :ensure t
   :config
-  (progn
-    (setq solarized-distinct-fringe-background t)
-    (setq solarized-use-variable-pitch nil)
-    (setq solarized-high-contrast-mode-line t)
-    (load-theme 'solarized-light t)))
+  (setq solarized-distinct-fringe-background t)
+  (setq solarized-use-variable-(point)itch nil)
+  (setq solarized-high-contrast-mode-line t)
+  (load-theme 'solarized-light t))
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
@@ -158,46 +157,41 @@
 (use-package magit
   :ensure t
   :config
-  (progn
-    (setq magit-completing-read-function 'ivy-completing-read)))
+  (setq magit-completing-read-function 'ivy-completing-read))
 
 ;; gitignore-mode
 (use-package gitignore-mode
   :ensure t
   :config
-  (progn
-    (add-hook 'gitignore-mode-hook (lambda ()
-                                (setq require-final-newline t)))))
+  (add-hook 'gitignore-mode-hook (lambda ()
+                                   (setq require-final-newline t))))
 
 ;; ag.el
 (use-package ag
   :ensure t
   :config
-  (progn
-    (add-hook 'ag-mode-hook 'toggle-truncate-lines)
-    (setq ag-highlight-search t)
-    (setq ag-reuse-buffers 't)))
+  (add-hook 'ag-mode-hook 'toggle-truncate-lines)
+  (setq ag-highlight-search t)
+  (setq ag-reuse-buffers 't))
 
 ;; projectile
 (use-package projectile
   :ensure t
   :config
-  (progn
-    (projectile-global-mode)
-    (setq projectile-mode-line
-          '(:eval (format " [%s]" (projectile-project-name))))
-    (setq projectile-remember-window-configs t)
-    (setq projectile-completion-system 'ivy)
-    (setq projectile-switch-project-action 'projectile-dired)))
+  (projectile-global-mode)
+  (setq projectile-mode-line
+        '(:eval (format " [%s]" (projectile-project-name))))
+  (setq projectile-remember-window-configs t)
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-switch-project-action 'projectile-dired))
 
 ;; perspective-el
 (use-package perspective
   :ensure t
   :config
-  (progn
-    (setq persp-show-modestring nil)
-    (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
-    (persp-mode)))
+  (setq persp-show-modestring nil)
+  (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
+  (persp-mode))
 
 ;; ivy
 (use-package ivy
@@ -206,8 +200,7 @@
   :bind
   ("C-c C-r" . ivy-resume)
   :config
-  (progn
-    (ivy-mode 1)))
+  (ivy-mode 1))
 
 ;; swiper
 (use-package swiper
@@ -228,20 +221,18 @@
   :ensure t
   :mode "\\.sls$"
   :config
-  (progn
-    (add-hook 'yaml-mode-hook (lambda ()
-                                (setq require-final-newline t)))))
+  (add-hook 'yaml-mode-hook (lambda ()
+                              (setq require-final-newline t))))
 
 ;; go-mode
 (use-package go-mode
   :ensure t
   :config
-  (progn
-    (setq gofmt-command "goimports")
-    (add-hook 'before-save-hook #'gofmt-before-save)
-    (add-hook 'go-mode-hook (lambda ()
-                              (subword-mode)
-                              (local-set-key (kbd "C-c C-k") 'godoc-at-point)))))
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  (add-hook 'go-mode-hook (lambda ()
+                            (subword-mode)
+                            (local-set-key (kbd "C-c C-k") 'godoc-at-point))))
 
 ;; go-direx
 (use-package go-direx
@@ -253,27 +244,24 @@
 (use-package go-eldoc
   :ensure t
   :config
-  (progn
-    (add-hook 'go-mode-hook 'go-eldoc-setup)))
+  (add-hook 'go-mode-hook 'go-eldoc-setup))
 
 ;; rst-mode
 (use-package rst
   :config
-  (progn
-    (add-hook 'rst-mode-hook
-              (lambda ()
-                (local-set-key (kbd "C-M-h") 'backward-kill-word)
-                (setq-local fill-column 80)
-                (turn-on-auto-fill)))))
+  (add-hook 'rst-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-M-h") 'backward-kill-word)
+              (setq-local fill-column 80)
+              (turn-on-auto-fill))))
 
 ;; cc-mode
 (use-package cc-mode
   :config
-  (progn
-    (add-hook 'c-mode-common-hook
-              (lambda ()
-                (local-set-key (kbd "C-M-h") 'backward-kill-word)
-                (local-set-key (kbd "C-c h") 'c-mark-function)))))
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (local-set-key (kbd "C-M-h") 'backward-kill-word)
+              (local-set-key (kbd "C-c h") 'c-mark-function))))
 
 ;; web-mode
 (use-package web-mode
@@ -292,8 +280,7 @@
   :ensure t
   :diminish whole-line-or-region-mode
   :config
-  (progn
-    (whole-line-or-region-mode 1)))
+  (whole-line-or-region-mode 1))
 
 ;; comment-dwim-2
 (use-package comment-dwim-2
@@ -305,11 +292,10 @@
   :ensure t
   :diminish ws-butler-mode
   :config
-  (progn
-    (add-hook 'prog-mode-hook 'ws-butler-mode)
-    (add-hook 'jinja2-mode-hook 'ws-butler-mode)
-    (add-hook 'rst-mode-hook 'ws-butler-mode)
-    (add-hook 'yaml-mode-hook 'ws-butler-mode)))
+  (add-hook 'prog-mode-hook 'ws-butler-mode)
+  (add-hook 'jinja2-mode-hook 'ws-butler-mode)
+  (add-hook 'rst-mode-hook 'ws-butler-mode)
+  (add-hook 'yaml-mode-hook 'ws-butler-mode))
 
 ;; company-go
 (use-package company-go
@@ -328,12 +314,11 @@
   :bind
   ("M-/" . company-complete-common)
   :config
-  (progn
-    (defun my/python-mode-hook ()
-      (add-to-list 'company-backends 'company-jedi))
-    (add-hook 'python-mode-hook 'my/python-mode-hook)
-    (add-to-list 'company-backends 'company-go)
-    (setq company-dabbrev-downcase nil)))
+  (defun my/python-mode-hook ()
+    (add-to-list 'company-backends 'company-jedi))
+  (add-hook 'python-mode-hook 'my/python-mode-hook)
+  (add-to-list 'company-backends 'company-go)
+  (setq company-dabbrev-downcase nil))
 
 ;; avy
 (use-package avy
@@ -352,23 +337,20 @@
 (use-package flycheck-gometalinter
   :ensure t
   :config
-  (progn
-    (flycheck-gometalinter-setup)
-    (setq flycheck-gometalinter-fast t)
-    (setq flycheck-gometalinter-disable-linters
-          '("gotype"))))
+  (flycheck-gometalinter-setup)
+  (setq flycheck-gometalinter-fast t)
+  (setq flycheck-gometalinter-disable-linters '("gotype")))
 
 ;; flycheck
 (use-package flycheck
   :ensure t
   :config
-  (progn
-    (setq flycheck-check-syntax-automatically '(mode-enabled save))
-    (add-hook 'python-mode-hook 'flycheck-mode)
-    (add-hook 'go-mode-hook 'flycheck-mode)
-    (add-hook 'sh-mode-hook 'flycheck-mode)
-    (add-hook 'rst-mode-hook 'flycheck-mode)
-    (add-hook 'js-mode-hook 'flycheck-mode)))
+  (setq flycheck-check-syntax-automatically '(mode-enabled save))
+  (add-hook 'python-mode-hook 'flycheck-mode)
+  (add-hook 'go-mode-hook 'flycheck-mode)
+  (add-hook 'sh-mode-hook 'flycheck-mode)
+  (add-hook 'rst-mode-hook 'flycheck-mode)
+  (add-hook 'js-mode-hook 'flycheck-mode))
 
 ;; markdown-mode
 (use-package markdown-mode
@@ -386,11 +368,10 @@
   :ensure t
   :diminish yas-minor-mode
   :config
-  (progn
-    (add-to-list 'yas-snippet-dirs (expand-file-name
-                                    "yasnippet-snippets" user-emacs-directory))
-    (yas-reload-all)
-    (add-hook 'prog-mode-hook #'yas-minor-mode)))
+  (add-to-list 'yas-snippet-dirs (expand-file-name
+                                  "yasnippet-snippets" user-emacs-directory))
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode))
 
 ;; dockerfile-mode
 (use-package dockerfile-mode
@@ -407,8 +388,7 @@
 ;; js-mode
 (use-package js
   :config
-  (progn
-    (setq js-indent-level 2)))
+  (setq js-indent-level 2))
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
