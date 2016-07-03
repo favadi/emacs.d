@@ -211,8 +211,9 @@
     (ivy-mode 1)))
 
 ;; swiper
-;; (use-package swiper
-;;   :ensure t)
+(use-package swiper
+  :ensure t
+  :bind ("\C-s" . swiper))
 
 ;; counsel
 (use-package counsel
