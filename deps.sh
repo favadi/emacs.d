@@ -32,8 +32,8 @@ sudo port select --set pylint pylint27
 
 sudo port install the_silver_searcher
 
-# js
-sudo port install npm
+# javascript
+sudo port install npm2
 npm install standard -g
 npm install tern -g
 
