@@ -29,6 +29,8 @@ sudo port select --set python python27
 sudo port install py-flake8 py-pylint
 sudo port select --set flake8 flake8-27
 sudo port select --set pylint pylint27
+sudo port install py-virtualenvwrapper
+sudo port select --set virtualenv virtualenv27
 
 sudo port install the_silver_searcher
 
