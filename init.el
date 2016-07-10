@@ -185,14 +185,6 @@
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action 'projectile-dired))
 
-;; perspective-el
-(use-package perspective
-  :ensure t
-  :config
-  (setq persp-show-modestring nil)
-  (add-hook 'persp-switch-hook 'hack-dir-local-variables-non-file-buffer)
-  (persp-mode))
-
 ;; ivy
 (use-package ivy
   :ensure t
@@ -403,7 +395,6 @@
 (use-package go-rename
   :bind ("C-c r" . go-rename))
 (use-package go-guru)
-(use-package persp-projectile)
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
