@@ -174,6 +174,14 @@
   (setq ag-highlight-search t)
   (setq ag-reuse-buffers 't))
 
+;; ivy
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :config
+  (ivy-mode 1)
+  (bind-key "C-c C-r" 'ivy-resume))
+
 ;; projectile
 (use-package projectile
   :ensure t
@@ -184,15 +192,6 @@
   (setq projectile-remember-window-configs t)
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action 'projectile-dired))
-
-;; ivy
-(use-package ivy
-  :ensure t
-  :diminish ivy-mode
-  :bind
-  ("C-c C-r" . ivy-resume)
-  :config
-  (ivy-mode 1))
 
 ;; swiper
 (use-package swiper
@@ -384,16 +383,13 @@
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
-(add-to-list 'load-path
-             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/refactor/rename"))
-(add-to-list 'load-path
-             (expand-file-name "~/go-dev-tools/src/golang.org/x/tools/cmd/guru"))
-
 
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
-(use-package jinja2-mode)
+(use-package jinja2-mode
+  :load-path "~/go-dev-tools/src/golang.org/x/tools/refactor/rename")
 (use-package go-rename
-  :bind ("C-c r" . go-rename))
+  :bind ("C-c r" . go-rename)
+  :load-path "~/go-dev-tools/src/golang.org/x/tools/cmd/guru")
 (use-package go-guru)
 
 ;; change custom file location
