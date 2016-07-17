@@ -399,4 +399,6 @@
 
 (use-package auto-package-update
   :ensure t
-  :config (auto-package-update-maybe))
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (auto-package-update-maybe))
