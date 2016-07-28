@@ -381,6 +381,10 @@
   :config
   (setq js-indent-level 2))
 
+;; sml-mode
+(use-package sml-mode
+  :ensure t)
+
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
 
