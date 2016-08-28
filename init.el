@@ -193,11 +193,6 @@
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action 'projectile-dired))
 
-;; swiper
-(use-package swiper
-  :ensure t
-  :bind ("\C-s" . swiper))
-
 ;; counsel
 (use-package counsel
   :ensure t
