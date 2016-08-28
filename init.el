@@ -273,17 +273,6 @@
   :ensure t
   :bind ("M-;" . comment-dwim-2))
 
-;; ws-butler
-(use-package ws-butler
-  :ensure t
-  :diminish ws-butler-mode
-  :config
-  (add-hook 'prog-mode-hook 'ws-butler-mode)
-  (add-hook 'jinja2-mode-hook 'ws-butler-mode)
-  (add-hook 'rst-mode-hook 'ws-butler-mode)
-  (add-hook 'yaml-mode-hook 'ws-butler-mode)
-  (add-hook 'protobuf-mode-hook 'ws-butler-mode))
-
 ;; company-go
 (use-package company-go
   :ensure t)
@@ -386,6 +375,17 @@
 ;; sml-mode
 (use-package sml-mode
   :ensure t)
+
+;; ws-butler
+(use-package ws-butler
+  :ensure t
+  :diminish ws-butler-mode
+  :config
+  (add-hook 'prog-mode-hook 'ws-butler-mode)
+  (add-hook 'jinja2-mode-hook 'ws-butler-mode)
+  (add-hook 'rst-mode-hook 'ws-butler-mode)
+  (add-hook 'yaml-mode-hook 'ws-butler-mode)
+  (add-hook 'protobuf-mode-hook 'ws-butler-mode))
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
