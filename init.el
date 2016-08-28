@@ -286,7 +286,8 @@
   (add-hook 'prog-mode-hook 'ws-butler-mode)
   (add-hook 'jinja2-mode-hook 'ws-butler-mode)
   (add-hook 'rst-mode-hook 'ws-butler-mode)
-  (add-hook 'yaml-mode-hook 'ws-butler-mode))
+  (add-hook 'yaml-mode-hook 'ws-butler-mode)
+  (add-hook 'protobuf-mode-hook 'ws-butler-mode))
 
 ;; company-go
 (use-package company-go
