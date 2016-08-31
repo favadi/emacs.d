@@ -1,7 +1,7 @@
 ;; Use package.el to manage packages
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "https://9bug.github.io/melpa-stable/") t)
 (package-initialize)
 
 ;; use-package
