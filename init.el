@@ -126,7 +126,8 @@
   :ensure t
   :config
   (setq solarized-distinct-fringe-background t)
-  (setq solarized-use-variable-(point)itch nil)
+  (setq solarized-use-variable-pitch nil)
+  (setq solarized-scale-org-headlines nil)
   (setq solarized-high-contrast-mode-line t)
   (load-theme 'solarized-light t))
 
@@ -302,7 +303,7 @@
   :bind
   (("C-c SPC" . avy-goto-word-1)))
 
-;; ace-window
+;; switch-window
 (use-package switch-window
   :ensure t
   :bind ("C-x o" . switch-window))
@@ -386,6 +387,14 @@
   (add-hook 'rst-mode-hook 'ws-butler-mode)
   (add-hook 'yaml-mode-hook 'ws-butler-mode)
   (add-hook 'protobuf-mode-hook 'ws-butler-mode))
+
+;; org-mode
+(use-package org
+  :ensure t
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c c" . org-capture)
+         ("C-c b" . org-iswitchb)))
 
 ;; install packages not available in melpa stable
 (add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
