@@ -116,7 +116,7 @@
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
 ;; toggle fullscreen
-(global-set-key (kbd "C-c C-c C-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "M-<f11>") 'toggle-frame-fullscreen)
 
 ;; help key binding
 (bind-key "C-z" 'help-command)
