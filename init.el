@@ -18,6 +18,9 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 
+;; make cursor a vertical line instead of a box
+(setq cursor-type 'bar)
+
 ;; disable startup message
 (setq inhibit-startup-message t)
 
@@ -129,7 +132,7 @@
   (setq solarized-use-variable-pitch nil)
   (setq solarized-scale-org-headlines nil)
   (setq solarized-high-contrast-mode-line t)
-  (load-theme 'solarized-light t))
+  (load-theme 'solarized-dark t))
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
@@ -141,7 +144,7 @@
           (exec-path-from-shell-initialize)))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "PragmataPro Mono 12" t t)
+      (set-frame-font "Bloomberg Fixed Unicode N 11" t t)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
       (setq dired-use-ls-dired nil)))
@@ -154,11 +157,16 @@
 (use-package hilit-chg
   :diminish highlight-changes-mode)
 
+;; to supress ElDoc in mode line
+(eval-after-load "eldoc"
+  '(diminish 'eldoc-mode))
+
 ;; magit
 (use-package magit
   :ensure t
   :config
-  (setq magit-completing-read-function 'ivy-completing-read))
+  (setq magit-completing-read-function 'ivy-completing-read)
+  :diminish auto-revert-mode)
 
 ;; gitignore-mode
 (use-package gitignore-mode
