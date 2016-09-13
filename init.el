@@ -229,6 +229,13 @@
                             (subword-mode)
                             (local-set-key (kbd "C-c C-k") 'godoc-at-point))))
 
+;; go-add-tags
+(use-package go-add-tags
+  :ensure t
+  :config
+  (with-eval-after-load 'go-mode
+    (define-key go-mode-map (kbd "C-c t") #'go-add-tags)))
+
 ;; go-direx
 (use-package go-direx
   :ensure t
