@@ -385,6 +385,19 @@
   :config
   (setq js-indent-level 2))
 
+;; ternjs
+(use-package tern
+  :load-path "~/.npm-packages/lib/node_modules/tern/emacs/"
+  :config
+  (autoload 'tern-mode "tern.el" nil t)
+  (add-hook 'js-mode-hook (lambda () (tern-mode t))))
+
+(use-package company-tern
+  :ensure t
+  :load-path "vendor"
+  :config
+  (add-to-list 'company-backends 'company-tern))
+
 ;; sml-mode
 (use-package sml-mode
   :ensure t)
@@ -408,16 +421,15 @@
          ("C-c c" . org-capture)
          ("C-c b" . org-iswitchb)))
 
-;; install packages not available in melpa stable
-(add-to-list 'load-path (expand-file-name "vendor" user-emacs-directory))
-
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode
-  :load-path "~/go-dev-tools/src/golang.org/x/tools/refactor/rename")
+  :load-path "vendor")
+
 (use-package go-rename
+  :load-path "~/go-dev-tools/src/golang.org/x/tools/refactor/rename")
+(use-package go-guru
   :bind ("C-c r" . go-rename)
   :load-path "~/go-dev-tools/src/golang.org/x/tools/cmd/guru")
-(use-package go-guru)
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
