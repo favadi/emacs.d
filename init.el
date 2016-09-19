@@ -18,9 +18,6 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 
-;; make cursor a vertical line instead of a box
-(setq cursor-type 'bar)
-
 ;; disable startup message
 (setq inhibit-startup-message t)
 
@@ -132,7 +129,7 @@
   (setq solarized-use-variable-pitch nil)
   (setq solarized-scale-org-headlines nil)
   (setq solarized-high-contrast-mode-line t)
-  (load-theme 'solarized-dark t))
+  (load-theme 'solarized-light t))
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
@@ -144,7 +141,7 @@
           (exec-path-from-shell-initialize)))
       ;; use bash installed from brew
       (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "Bloomberg Fixed Unicode N 11" t t)
+      (set-frame-font "PragmataPro Mono 12" t t)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
       (setq dired-use-ls-dired nil)))
