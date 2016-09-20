@@ -128,12 +128,11 @@
   (setq solarized-distinct-fringe-background t)
   (setq solarized-use-variable-pitch nil)
   (setq solarized-scale-org-headlines nil)
-  (setq solarized-high-contrast-mode-line t)
-  (load-theme 'solarized-light t))
+  (setq solarized-high-contrast-mode-line t))
 
 ;; Mac OSX specific settings
-(if (eq system-type 'darwin)
-    (progn
+(cond
+ ((eq system-type 'darwin)
       (use-package exec-path-from-shell
         :ensure t
         :config
@@ -144,7 +143,11 @@
       (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
-      (setq dired-use-ls-dired nil)))
+      (setq dired-use-ls-dired nil))
+ ((eq system-type 'windows-nt)
+  (load-theme 'solarized-dark t)
+  (set-frame-font "Tamsyn8x15" t t)
+  (setq w32-apps-modifier 'control)))
 
 ;; electric-pair-mode
 (electric-pair-mode 1)
