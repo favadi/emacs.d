@@ -4,10 +4,10 @@
 set -eux
 
 # shell script
-sudo port install shellcheck
+brew install shellcheck
 
 # golang
-sudo port install go
+brew install go
 export GOPATH=$HOME/go-dev-tools
 go get -u \
    github.com/alecthomas/gometalinter \
@@ -21,21 +21,25 @@ go get -u \
 
 gocode set autobuild true
 
-gometalinter --install --update
+gometalinter --install
 
 # python
-sudo port install python27
-sudo port select --set python python27
-sudo port install py-flake8 py-pylint
-sudo port select --set flake8 flake8-27
-sudo port select --set pylint pylint27
-sudo port install py-virtualenvwrapper
-sudo port select --set virtualenv virtualenv27
+# sudo port install python27
+# sudo port select --set python python27
+# sudo port install py-flake8 py-pylint
+# sudo port select --set flake8 flake8-27
+# sudo port select --set pylint pylint27
+# sudo port install py-virtualenvwrapper
+# sudo port select --set virtualenv virtualenv27
+brew install python
+pip install flake8
+pip install pylint
+pip install virtualenvwrapper
 
-sudo port install the_silver_searcher
+brew install the_silver_searcher
 
 # javascript
-sudo port install npm2
+brew install nodejs
 npm install standard -g
 npm install tern -g
 

@@ -137,11 +137,11 @@
       (use-package exec-path-from-shell
         :ensure t
         :config
-        (when (memq window-system '(mac ns))
-          (exec-path-from-shell-initialize)))
+          (exec-path-from-shell-initialize))
       ;; use bash installed from brew
-      (setq explicit-shell-file-name "/opt/local/bin/bash")
+      (setq explicit-shell-file-name "/usr/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
+      (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
       (setq dired-use-ls-dired nil)))
