@@ -139,7 +139,7 @@
         :config
           (exec-path-from-shell-initialize))
       ;; use bash installed from brew
-      (setq explicit-shell-file-name "/opt/local/bin/bash")
+      (setq explicit-shell-file-name "/usr/local/bin/bash")
       (set-frame-font "PragmataPro Mono 12" t t)
       (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
