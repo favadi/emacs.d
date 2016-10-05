@@ -394,7 +394,6 @@
 
 (use-package company-tern
   :ensure t
-  :load-path "vendor"
   :config
   (add-to-list 'company-backends 'company-tern))
 
