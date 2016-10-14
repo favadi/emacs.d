@@ -425,10 +425,10 @@
   :load-path "vendor")
 
 (use-package go-rename
-  :load-path "~/go-dev-tools/src/golang.org/x/tools/refactor/rename")
-(use-package go-guru
   :bind ("C-c r" . go-rename)
-  :load-path "~/go-dev-tools/src/golang.org/x/tools/cmd/guru")
+  :load-path "~/go/src/golang.org/x/tools/refactor/rename")
+(use-package go-guru
+  :load-path "~/go/src/golang.org/x/tools/cmd/guru")
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
