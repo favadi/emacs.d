@@ -139,8 +139,8 @@
         :config
           (exec-path-from-shell-initialize))
       ;; use bash installed from brew
-      (setq explicit-shell-file-name "/usr/local/bin/bash")
-      (set-frame-font "PragmataPro Mono 12" t t)
+      (setq explicit-shell-file-name "/opt/local/bin/bash")
+      (set-frame-font "Input Mono Compressed 12" t t)
       (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
@@ -225,6 +225,14 @@
   (add-hook 'go-mode-hook (lambda ()
                             (subword-mode)
                             (local-set-key (kbd "C-c C-k") 'godoc-at-point))))
+(use-package go-rename
+  :load-path "~/go/src/golang.org/x/tools/refactor/rename"
+  :config
+  (add-hook 'go-mode-hook (lambda ()
+                            (local-set-key (kbd "C-c r") 'go-rename))))
+
+(use-package go-guru
+  :load-path "vendor")
 
 ;; go-add-tags
 (use-package go-add-tags
@@ -352,16 +360,6 @@
   :config
   (bind-key* "C-=" 'er/expand-region))
 
-;; yasnippet
-(use-package yasnippet
-  :ensure t
-  :diminish yas-minor-mode
-  :config
-  (add-to-list 'yas-snippet-dirs (expand-file-name
-                                  "yasnippet-snippets" user-emacs-directory))
-  (yas-reload-all)
-  (add-hook 'prog-mode-hook #'yas-minor-mode))
-
 ;; dockerfile-mode
 (use-package dockerfile-mode
   :ensure t)
@@ -423,12 +421,6 @@
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode
   :load-path "vendor")
-
-(use-package go-rename
-  :bind ("C-c r" . go-rename)
-  :load-path "~/go/src/golang.org/x/tools/refactor/rename")
-(use-package go-guru
-  :load-path "~/go/src/golang.org/x/tools/cmd/guru")
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
