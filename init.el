@@ -137,8 +137,8 @@
       (use-package exec-path-from-shell
         :ensure t
         :config
-          (exec-path-from-shell-initialize))
-      ;; use bash installed from brew
+        (exec-path-from-shell-initialize))
+      ;; use bash installed from macports
       (setq explicit-shell-file-name "/opt/local/bin/bash")
       (set-frame-font "Input Mono Compressed 12" t t)
       (setq mac-command-modifier 'meta)
@@ -196,8 +196,7 @@
   (setq projectile-mode-line
         '(:eval (format " [%s]" (projectile-project-name))))
   (setq projectile-remember-window-configs t)
-  (setq projectile-completion-system 'ivy)
-  (setq projectile-switch-project-action 'projectile-dired))
+  (setq projectile-completion-system 'ivy))
 
 ;; counsel
 (use-package counsel
@@ -222,6 +221,7 @@
   :config
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook #'gofmt-before-save)
+  (add-hook 'projectile-after-switch-project-hook #'go-set-project)
   (add-hook 'go-mode-hook (lambda ()
                             (subword-mode)
                             (local-set-key (kbd "C-c C-k") 'godoc-at-point))))
