@@ -289,11 +289,6 @@
   :config
   (whole-line-or-region-mode 1))
 
-;; comment-dwim-2
-(use-package comment-dwim-2
-  :ensure t
-  :bind ("M-;" . comment-dwim-2))
-
 ;; company-go
 (use-package company-go
   :ensure t)
