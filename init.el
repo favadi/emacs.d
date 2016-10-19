@@ -373,16 +373,34 @@
   (add-hook 'protobuf-mode-hook
             (lambda () (c-add-style "my-style" my-protobuf-style t))))
 
+
+(defun setup-local-standard ()
+    "If standard found in node_modules directory - use that for flycheck.
+Copied from: http://www.cyrusinnovation.com/initial-emacs-setup-for-reactreactnative/"
+    (interactive)
+    (let ((local-standard (expand-file-name "./node_modules/.bin/standard")))
+      (setq flycheck-javascript-standard-executable
+            (and (file-exists-p local-standard) local-standard))))
+
+(defun setup-local-tern ()
+    "If tern found in node_modules directory - use that for tern mode."
+    (interactive)
+    (let ((local-tern (expand-file-name "./node_modules/.bin/tern")))
+      (message local-tern)
+      (and (file-exists-p local-tern) (setq tern-command (list local-tern)))))
+
 ;; js-mode
 (use-package js
   :config
-  (setq js-indent-level 2))
+  (setq js-indent-level 2)
+  (add-hook 'projectile-after-switch-project-hook 'setup-local-standard)
+  (add-hook 'projectile-after-switch-project-hook 'setup-local-tern)
+  (add-hook 'js-mode-hook
+            (lambda () (setq flycheck-enabled-checkers '(javascript-standard)))))
 
 ;; ternjs
 (use-package tern
-  :load-path "~/.npm-packages/lib/node_modules/tern/emacs/"
   :config
-  (autoload 'tern-mode "tern.el" nil t)
   (add-hook 'js-mode-hook (lambda () (tern-mode t))))
 
 (use-package company-tern
