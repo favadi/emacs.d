@@ -387,7 +387,9 @@ Copied from: http://www.cyrusinnovation.com/initial-emacs-setup-for-reactreactna
     (interactive)
     (let ((local-tern (expand-file-name "./node_modules/.bin/tern")))
       (message local-tern)
-      (and (file-exists-p local-tern) (setq tern-command (list local-tern)))))
+      (and (file-exists-p local-tern)
+           (setq tern-command (list local-tern))
+           (tern-mode t))))
 
 ;; js-mode
 (use-package js
@@ -400,8 +402,7 @@ Copied from: http://www.cyrusinnovation.com/initial-emacs-setup-for-reactreactna
 
 ;; ternjs
 (use-package tern
-  :config
-  (add-hook 'js-mode-hook (lambda () (tern-mode t))))
+  :ensure t)
 
 (use-package company-tern
   :ensure t
