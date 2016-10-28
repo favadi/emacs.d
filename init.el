@@ -147,6 +147,7 @@
  ((eq system-type 'windows-nt)
   (load-theme 'solarized-dark t)
   (set-frame-font "Tamsyn8x15" t t)
+  (set-language-environment "UTF-8")
   (setq w32-apps-modifier 'control)))
 
 ;; electric-pair-mode
