@@ -323,8 +323,8 @@
   :ensure t
   :bind ("C-x o" . switch-window))
 
-(use-package flycheck-package
-  :ensure t)
+;; (use-package flycheck-package
+;;   :ensure t)
 
 (use-package flycheck-gometalinter
   :ensure t
@@ -435,6 +435,9 @@ Copied from: http://www.cyrusinnovation.com/initial-emacs-setup-for-reactreactna
 ;; jinja2 mode, https://github.com/paradoxxxzero/jinja2-mode
 (use-package jinja2-mode
   :load-path "vendor")
+
+(use-package qml-mode
+  :ensure t)
 
 ;; change custom file location
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
