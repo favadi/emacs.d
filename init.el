@@ -129,7 +129,7 @@
   (setq solarized-use-variable-pitch nil)
   (setq solarized-scale-org-headlines nil)
   (setq solarized-high-contrast-mode-line t)
-  (load-theme 'solarized-light t))
+  (load-theme 'solarized-dark t))
 
 ;; Mac OSX specific settings
 (if (eq system-type 'darwin)
@@ -140,7 +140,7 @@
         (exec-path-from-shell-initialize))
       ;; use bash installed from macports
       (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "Input Mono Compressed 12" t t)
+      (set-frame-font "Operator Mono 13" t t)
       (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
       ;; macOS ls doesn't support --dired
