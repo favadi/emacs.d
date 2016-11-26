@@ -132,19 +132,23 @@
   (load-theme 'solarized-light t))
 
 ;; Mac OSX specific settings
-(if (eq system-type 'darwin)
-    (progn
-      (use-package exec-path-from-shell
-        :ensure t
-        :config
-        (exec-path-from-shell-initialize))
-      ;; use bash installed from macports
-      (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "Input Mono Compressed 12" t t)
-      (setq mac-command-modifier 'meta)
-      (setq mac-right-option-modifier 'control)
-      ;; macOS ls doesn't support --dired
-      (setq dired-use-ls-dired nil)))
+(cond
+ ((eq system-type 'darwin)
+  (progn
+    (use-package exec-path-from-shell
+      :ensure t
+      :config
+      (exec-path-from-shell-initialize))
+    ;; use bash installed from macports
+    (setq explicit-shell-file-name "/opt/local/bin/bash")
+    (set-frame-font "Iosevka Term Medium 10" t t)
+    (setq mac-command-modifier 'meta)
+    (setq mac-right-option-modifier 'control)
+    ;; macOS ls doesn't support --dired
+    (setq dired-use-ls-dired nil)))
+ ((eq system-type 'gnu/linux)
+  (progn
+    (set-frame-font "Iosevka Term Medium 10" t t))))
 
 ;; electric-pair-mode
 (electric-pair-mode 1)
