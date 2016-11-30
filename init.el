@@ -140,9 +140,10 @@
         (exec-path-from-shell-initialize))
       ;; use bash installed from macports
       (setq explicit-shell-file-name "/opt/local/bin/bash")
-      (set-frame-font "Input Mono Compressed 12" t t)
+      (set-frame-font "PragmataPro 12" t t)
       (setq mac-command-modifier 'meta)
       (setq mac-right-option-modifier 'control)
+      (mac-auto-operator-composition-mode)
       ;; macOS ls doesn't support --dired
       (setq dired-use-ls-dired nil)))
 
