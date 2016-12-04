@@ -227,7 +227,7 @@
                             (subword-mode)
                             (local-set-key (kbd "C-c C-k") 'godoc-at-point))))
 (use-package go-rename
-  :load-path "~/go/src/golang.org/x/tools/refactor/rename"
+  :load-path "vendor"
   :config
   (add-hook 'go-mode-hook (lambda ()
                             (local-set-key (kbd "C-c r") 'go-rename))))
